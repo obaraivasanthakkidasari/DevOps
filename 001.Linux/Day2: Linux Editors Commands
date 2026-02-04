@@ -1,0 +1,596 @@
+Linux Editors Commands :
+
+1)Command Mode
+2) Insert Mode
+3) Save Mode
+
+
+  EDITORS:
+To edit the content in a file
+ex: vim/vi, nano
+
+we have 3 modes in vim editor
+1. command mode
+2. insert mode
+3. save mode
+
+NOTE:
+i   : to insert content
+esc : after inserting content
+
+
+3. SAVE MODE:
+:w	: to save
+:q	: to quit
+:wq	: save & quit
+:wq!	: forceful save & quit
+
+2. INSERT MODE:
+i	: to insert the content
+I	: starting of line
+A	: Ending of line
+O	: create new line above existing
+o	: create new line below existing
+
+1. COMMAND MODE:
+
+shift g		: bottom of file
+gg		: top of file
+14gg		: to go for 14th line
+8gg		: to go for 8th line
+yy		: copies single line
+3yy		: copies three line
+p		: paste the lines 
+3p		: paste the 3 times 
+dd		: to delete the single line
+3dd		: to delete the three line
+u		: to undo
+:set number	: to print line numbers
+/word		: to search for a word
+
+SED: STREAM EDITOR
+to replace words inside a file
+
+sed -i 's/word1/word2/g' file1	: to replace word1 with word2
+sed -i 's/raham/vijay/g' file1  : to replace raham as vijay
+
+sed -i 's/vijay/raham/g; s/linux/devops/g' file1 : to replace multiple words
+sed -i '2c hai all' file1	: to replace 2nd line 
+
+
+  [root@ip-172-31-26-128 ~]# vim file1
+[root@ip-172-31-26-128 ~]# :wq
+-bash: :wq: command not found
+[root@ip-172-31-26-128 ~]# :wq!
+-bash: :wq!: command not found
+[root@ip-172-31-26-128 ~]# vim file1
+[root@ip-172-31-26-128 ~]# vim file
+[root@ip-172-31-26-128 ~]# vim file1
+[root@ip-172-31-26-128 ~]# lsc cpu
+-bash: lsc: command not found
+[root@ip-172-31-26-128 ~]# ls cpu
+ls: cannot access 'cpu': No such file or directory
+[root@ip-172-31-26-128 ~]# cat/proc/cpuinfo
+-bash: cat/proc/cpuinfo: No such file or directory
+[root@ip-172-31-26-128 ~]# sudo -i
+[root@ip-172-31-26-128 ~]# ls cpu
+ls: cannot access 'cpu': No such file or directory
+[root@ip-172-31-26-128 ~]# cat/proc/cpuinfo
+-bash: cat/proc/cpuinfo: No such file or directory
+[root@ip-172-31-26-128 ~]# cat/proc/meminfo
+-bash: cat/proc/meminfo: No such file or directory
+[root@ip-172-31-26-128 ~]# lscpu
+Architecture:                x86_64
+  CPU op-mode(s):            32-bit, 64-bit
+  Address sizes:             46 bits physical, 48 bits virtual
+  Byte Order:                Little Endian
+CPU(s):                      2
+  On-line CPU(s) list:       0,1
+Vendor ID:                   GenuineIntel
+  BIOS Vendor ID:            Intel(R) Corporation
+  Model name:                Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
+    BIOS Model name:         Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
+    CPU family:              6
+    Model:                   85
+    Thread(s) per core:      2
+    Core(s) per socket:      1
+    Socket(s):               1
+    Stepping:                7
+    BogoMIPS:                4999.99
+    Flags:                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm co
+                             nstant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt
+                              tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch cpuid_fault pti fsgsbase tsc_adjust bmi1 avx2 smep b
+                             mi2 erms invpcid mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves ida ara
+                             t pku ospke
+Virtualization features:     
+  Hypervisor vendor:         KVM
+  Virtualization type:       full
+Caches (sum of all):         
+  L1d:                       32 KiB (1 instance)
+  L1i:                       32 KiB (1 instance)
+  L2:                        1 MiB (1 instance)
+  L3:                        35.8 MiB (1 instance)
+NUMA:                        
+  NUMA node(s):              1
+  NUMA node0 CPU(s):         0,1
+Vulnerabilities:             
+  Gather data sampling:      Unknown: Dependent on hypervisor status
+  Indirect target selection: Mitigation; Aligned branch/return thunks
+  Itlb multihit:             KVM: Mitigation: VMX unsupported
+  L1tf:                      Mitigation; PTE Inversion
+  Mds:                       Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+  Meltdown:                  Mitigation; PTI
+  Mmio stale data:           Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+  Reg file data sampling:    Not affected
+  Retbleed:                  Vulnerable
+  Spec rstack overflow:      Not affected
+  Spec store bypass:         Vulnerable
+  Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+  Spectre v2:                Mitigation; Retpolines; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI Retpoline
+  Srbds:                     Not affected
+  Tsa:                       Not affected
+  Tsx async abort:           Not affected
+  Vmscape:                   Not affected
+[root@ip-172-31-26-128 ~]# lsmem
+RANGE                                 SIZE  STATE REMOVABLE BLOCK
+0x0000000000000000-0x000000003fffffff   1G online       yes   0-7
+
+Memory block size:       128M
+Total online memory:       1G
+Total offline memory:      0B
+[root@ip-172-31-26-128 ~]# lsblk
+NAME          MAJ:MIN RM SIZE RO TYPE MOUNTPOINTS
+nvme0n1       259:0    0   8G  0 disk 
+├─nvme0n1p1   259:1    0   8G  0 part /
+├─nvme0n1p127 259:2    0   1M  0 part 
+└─nvme0n1p128 259:3    0  10M  0 part /boot/efi
+[root@ip-172-31-26-128 ~]# cat/proc/cpuinfo
+-bash: cat/proc/cpuinfo: No such file or directory
+[root@ip-172-31-26-128 ~]# cat /proc/cpuinfo
+processor       : 0
+vendor_id       : GenuineIntel
+cpu family      : 6
+model           : 85
+model name      : Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
+stepping        : 7
+microcode       : 0x5003901
+cpu MHz         : 2499.996
+cache size      : 36608 KB
+physical id     : 0
+siblings        : 2
+core id         : 0
+cpu cores       : 1
+apicid          : 0
+initial apicid  : 0
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch cpuid_fault pti fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves ida arat pku ospke
+bugs            : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit mmio_stale_data retbleed gds bhi its
+bogomips        : 4999.99
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 46 bits physical, 48 bits virtual
+power management:
+
+processor       : 1
+vendor_id       : GenuineIntel
+cpu family      : 6
+model           : 85
+model name      : Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
+stepping        : 7
+microcode       : 0x5003901
+cpu MHz         : 2499.996
+cache size      : 36608 KB
+physical id     : 0
+siblings        : 2
+core id         : 0
+cpu cores       : 1
+apicid          : 1
+initial apicid  : 1
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch cpuid_fault pti fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves ida arat pku ospke
+bugs            : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit mmio_stale_data retbleed gds bhi its
+bogomips        : 4999.99
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 46 bits physical, 48 bits virtual
+power management:
+
+[root@ip-172-31-26-128 ~]# cat /proc/meminfo
+MemTotal:         933572 kB
+MemFree:          535572 kB
+MemAvailable:     632508 kB
+Buffers:            2168 kB
+Cached:           209196 kB
+SwapCached:            0 kB
+Active:           108416 kB
+Inactive:         155916 kB
+Active(anon):        324 kB
+Inactive(anon):    53076 kB
+Active(file):     108092 kB
+Inactive(file):   102840 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Zswap:                 0 kB
+Zswapped:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:         53036 kB
+Mapped:            45180 kB
+Shmem:               436 kB
+KReclaimable:      14388 kB
+Slab:              45060 kB
+SReclaimable:      14388 kB
+SUnreclaim:        30672 kB
+KernelStack:        2032 kB
+PageTables:         2852 kB
+SecPageTables:         0 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      466784 kB
+Committed_AS:     256532 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       10780 kB
+VmallocChunk:          0 kB
+Percpu:              976 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+FileHugePages:      4096 kB
+FilePmdMapped:         0 kB
+Unaccepted:            0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:       86448 kB
+DirectMap2M:      913408 kB
+DirectMap1G:           0 kB
+[root@ip-172-31-26-128 ~]# lscpu
+Architecture:                x86_64
+  CPU op-mode(s):            32-bit, 64-bit
+  Address sizes:             46 bits physical, 48 bits virtual
+  Byte Order:                Little Endian
+CPU(s):                      2
+  On-line CPU(s) list:       0,1
+Vendor ID:                   GenuineIntel
+  BIOS Vendor ID:            Intel(R) Corporation
+  Model name:                Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
+    BIOS Model name:         Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
+    CPU family:              6
+    Model:                   85
+    Thread(s) per core:      2
+    Core(s) per socket:      1
+    Socket(s):               1
+    Stepping:                7
+    BogoMIPS:                4999.99
+    Flags:                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm co
+                             nstant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt
+                              tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch cpuid_fault pti fsgsbase tsc_adjust bmi1 avx2 smep b
+                             mi2 erms invpcid mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves ida ara
+                             t pku ospke
+Virtualization features:     
+  Hypervisor vendor:         KVM
+  Virtualization type:       full
+Caches (sum of all):         
+  L1d:                       32 KiB (1 instance)
+  L1i:                       32 KiB (1 instance)
+  L2:                        1 MiB (1 instance)
+  L3:                        35.8 MiB (1 instance)
+NUMA:                        
+  NUMA node(s):              1
+  NUMA node0 CPU(s):         0,1
+Vulnerabilities:             
+  Gather data sampling:      Unknown: Dependent on hypervisor status
+  Indirect target selection: Mitigation; Aligned branch/return thunks
+  Itlb multihit:             KVM: Mitigation: VMX unsupported
+  L1tf:                      Mitigation; PTE Inversion
+  Mds:                       Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+  Meltdown:                  Mitigation; PTI
+  Mmio stale data:           Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+  Reg file data sampling:    Not affected
+  Retbleed:                  Vulnerable
+  Spec rstack overflow:      Not affected
+  Spec store bypass:         Vulnerable
+  Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+  Spectre v2:                Mitigation; Retpolines; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI Retpoline
+  Srbds:                     Not affected
+  Tsa:                       Not affected
+  Tsx async abort:           Not affected
+  Vmscape:                   Not affected
+[root@ip-172-31-26-128 ~]# lsmem
+RANGE                                 SIZE  STATE REMOVABLE BLOCK
+0x0000000000000000-0x000000003fffffff   1G online       yes   0-7
+
+Memory block size:       128M
+Total online memory:       1G
+Total offline memory:      0B
+[root@ip-172-31-26-128 ~]# fdisk -l
+Disk /dev/nvme0n1: 8 GiB, 8589934592 bytes, 16777216 sectors
+Disk model: Amazon Elastic Block Store              
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disklabel type: gpt
+Disk identifier: 0DE5030C-1A2F-4DA5-BB71-94BFEF0CE07F
+
+Device           Start      End  Sectors Size Type
+/dev/nvme0n1p1   24576 16777182 16752607   8G Linux filesystem
+/dev/nvme0n1p127 22528    24575     2048   1M BIOS boot
+/dev/nvme0n1p128  2048    22527    20480  10M EFI System
+
+Partition table entries are not in disk order.
+[root@ip-172-31-26-128 ~]# lsblk
+NAME          MAJ:MIN RM SIZE RO TYPE MOUNTPOINTS
+nvme0n1       259:0    0   8G  0 disk 
+├─nvme0n1p1   259:1    0   8G  0 part /
+├─nvme0n1p127 259:2    0   1M  0 part 
+└─nvme0n1p128 259:3    0  10M  0 part /boot/efi
+[root@ip-172-31-26-128 ~]# lshw
+-bash: lshw: command not found
+[root@ip-172-31-26-128 ~]# yum install lshw -y
+lsAmazon Linux 2023 Kernel Livepatch repository                      [===                                                           ] ---  B/s |   0  B     --:-- ETAmazon Linux 2023 Kernel Livepatch repository                                                                                       236 kB/s |  30 kB     00:00    
+hwDependencies resolved.
+====================================================================================================================================================================
+ Package                         Architecture                      Version                                             Repository                              Size
+====================================================================================================================================================================
+Installing:
+ lshw                            x86_64                            B.02.19.2-7.amzn2023.0.3                            amazonlinux                            319 k
+
+Transaction Summary
+====================================================================================================================================================================
+Install  1 Package
+
+Total download size: 319 k
+Installed size: 837 k
+Downloading Packages:
+lshw-B.02.19.2-7.amzn2023.0.3.x86_64.rpm                                                                                            8.3 MB/s | 319 kB     00:00    
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                               4.0 MB/s | 319 kB     00:00     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                            1/1 
+  Installing       : lshw-B.02.19.2-7.amzn2023.0.3.x86_64                                                                                                       1/1 
+  Running scriptlet: lshw-B.02.19.2-7.amzn2023.0.3.x86_64                                                                                                       1/1 
+  Verifying        : lshw-B.02.19.2-7.amzn2023.0.3.x86_64                                                                                                       1/1 
+
+Installed:
+  lshw-B.02.19.2-7.amzn2023.0.3.x86_64                                                                                                                              
+
+Complete!
+[root@ip-172-31-26-128 ~]# lshw
+ip-172-31-26-128.us-east-2.compute.internal
+    description: Computer
+    product: t3.micro
+    vendor: Amazon EC2
+    serial: ec201297-2084-7b4d-3fcf-1e6880704b86
+    width: 64 bits
+    capabilities: smbios-2.7 dmi-2.7 smp vsyscall32
+    configuration: uuid=ec201297-2084-7b4d-3fcf-1e6880704b86
+  *-core
+       description: Motherboard
+       vendor: Amazon EC2
+       physical id: 0
+     *-firmware
+          description: BIOS
+          vendor: Amazon EC2
+          physical id: 0
+          version: 1.0
+          date: 10/16/2017
+          size: 64KiB
+          capacity: 64KiB
+          capabilities: pci edd acpi virtualmachine
+     *-cpu
+          description: CPU
+          product: Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
+          vendor: Intel Corp.
+          physical id: 4
+          bus info: cpu@0
+          version: 6.85.7
+          slot: CPU 0
+          size: 2500MHz
+          capacity: 3500MHz
+          width: 64 bits
+          clock: 100MHz
+          capabilities: lm fpu fpu_exception wp vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp x86-64 constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch cpuid_fault pti fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves ida arat pku ospke
+          configuration: cores=1 enabledcores=1 microcode=83900673 threads=2
+        *-cache:0
+             description: L1 cache
+             physical id: 5
+             slot: L1-Cache
+             size: 1536KiB
+             capacity: 1536KiB
+             capabilities: synchronous internal write-back instruction
+             configuration: level=1
+        *-cache:1
+             description: L2 cache
+             physical id: 6
+             slot: L2-Cache
+             size: 24MiB
+             capacity: 24MiB
+             capabilities: synchronous internal varies unified
+             configuration: level=2
+        *-cache:2
+             description: L3 cache
+             physical id: 7
+             slot: L3-Cache
+             size: 35MiB
+             capacity: 35MiB
+             capabilities: synchronous internal varies unified
+             configuration: level=3
+     *-memory
+          description: System Memory
+          physical id: 8
+          slot: System board or motherboard
+          size: 1GiB
+          capacity: 1GiB
+        *-bank
+             description: DIMM DDR4 Static column Pseudo-static Synchronous Window DRAM 2666 MHz (0.4 ns)
+             physical id: 0
+             size: 1GiB
+             width: 64 bits
+             clock: 2666MHz (0.4ns)
+     *-pci
+          description: Host bridge
+          product: 440FX - 82441FX PMC [Natoma]
+          vendor: Intel Corporation
+          physical id: 100
+          bus info: pci@0000:00:00.0
+          version: 00
+          width: 32 bits
+          clock: 33MHz
+        *-isa
+             description: ISA bridge
+             product: 82371SB PIIX3 ISA [Natoma/Triton II]
+             vendor: Intel Corporation
+             physical id: 1
+             bus info: pci@0000:00:01.0
+             version: 00
+             width: 32 bits
+             clock: 33MHz
+             capabilities: isa bus_master
+             configuration: latency=0
+           *-pnp00:00
+                product: PnP device PNP0b00
+                physical id: 0
+                capabilities: pnp
+                configuration: driver=rtc_cmos
+           *-pnp00:01
+                product: PnP device PNP0303
+                physical id: 1
+                capabilities: pnp
+                configuration: driver=i8042 kbd
+           *-pnp00:02
+                product: PnP device PNP0f13
+                physical id: 2
+                capabilities: pnp
+                configuration: driver=i8042 aux
+           *-pnp00:03
+                product: PnP device PNP0400
+                physical id: 3
+                capabilities: pnp
+           *-pnp00:04
+                product: PnP device PNP0501
+                physical id: 4
+                capabilities: pnp
+                configuration: driver=serial
+        *-generic UNCLAIMED
+             description: Non-VGA unclassified device
+             product: 82371AB/EB/MB PIIX4 ACPI
+             vendor: Intel Corporation
+             physical id: 1.3
+             bus info: pci@0000:00:01.3
+             version: 08
+             width: 32 bits
+             clock: 33MHz
+             capabilities: bus_master
+             configuration: latency=0
+        *-display UNCLAIMED
+             description: VGA compatible controller
+             product: Amazon.com, Inc.
+             vendor: Amazon.com, Inc.
+             physical id: 3
+             bus info: pci@0000:00:03.0
+             version: 00
+             width: 32 bits
+             clock: 33MHz
+             capabilities: vga_controller bus_master
+             configuration: latency=0
+             resources: memory:80000000-803fffff memory:c0000-dffff
+        *-nvme
+             description: NVMe device
+             product: Amazon Elastic Block Store
+             vendor: Amazon.com, Inc.
+             physical id: 4
+             bus info: pci@0000:00:04.0
+             logical name: /dev/nvme0
+             version: 1.0
+             serial: vol006e5786953c42e2e
+             width: 32 bits
+             clock: 33MHz
+             capabilities: nvme pciexpress msix nvm_express bus_master cap_list
+             configuration: driver=nvme latency=0 nqn=nqn.2014.08.org.nvmexpress:1d0f1d0fvol006e5786953c42e2eAmazon Elastic Block Store state=live
+             resources: irq:11 memory:80404000-80407fff
+           *-namespace:0
+                description: NVMe disk
+                physical id: 0
+                logical name: /dev/ng0n1
+           *-namespace:1
+                description: NVMe disk
+                physical id: 1
+                bus info: nvme@0:1
+                logical name: /dev/nvme0n1
+                size: 8GiB (8589MB)
+                capabilities: gpt-1.00 partitioned partitioned:gpt
+                configuration: guid=0de5030c-1a2f-4da5-bb71-94bfef0ce07f logicalsectorsize=512 sectorsize=512 wwid=nvme.1d0f-766f6c3030366535373836393533633432653265-416d617a6f6e20456c617374696320426c6f636b2053746f7265-00000001
+              *-volume:0
+                   description: EFI partition
+                   physical id: 1
+                   bus info: nvme@0:1,1
+                   logical name: /dev/nvme0n1p1
+                   logical name: /
+                   serial: 10d17bea-2694-436d-9ad3-3e78e89e286c
+                   capacity: 8179MiB
+                   configuration: mount.fstype=xfs mount.options=rw,seclabel,noatime,attr2,inode64,logbufs=8,logbsize=32k,sunit=1024,swidth=1024,noquota name=Linux state=mounted
+              *-volume:1
+                   description: BIOS Boot partition
+                   vendor: EFI
+                   physical id: 7f
+                   bus info: nvme@0:1,127
+                   logical name: /dev/nvme0n1p127
+                   serial: 33481bce-b220-4cdc-ab8b-a5bfc05a513d
+                   capacity: 1023KiB
+                   capabilities: nofs
+                   configuration: name=BIOS Boot Partition
+              *-volume:2 UNCLAIMED
+                   description: Windows FAT volume
+                   vendor: mkfs.fat
+                   physical id: 80
+                   bus info: nvme@0:1,128
+                   version: FAT16
+                   serial: 8fb3-a5c7
+                   size: 15EiB
+                   capabilities: boot fat initialized
+                   configuration: FATs=2 filesystem=fat name=EFI System Partition
+        *-network
+             description: Ethernet interface
+             product: Elastic Network Adapter (ENA)
+             vendor: Amazon.com, Inc.
+             physical id: 5
+             bus info: pci@0000:00:05.0
+             logical name: ens5
+             version: 00
+             serial: 06:fe:9c:ee:2f:71
+             width: 32 bits
+             clock: 33MHz
+             capabilities: pciexpress msix bus_master cap_list ethernet physical
+             configuration: broadcast=yes driver=ena driverversion=2.15.0g ip=172.31.26.128 latency=0 link=yes multicast=yes
+             resources: irq:0 memory:80400000-80403fff
+  *-input:0
+       product: Power Button
+       physical id: 1
+       logical name: input0
+       logical name: /dev/input/event0
+       capabilities: platform
+  *-input:1
+       product: Sleep Button
+       physical id: 2
+       logical name: input1
+       logical name: /dev/input/event1
+       capabilities: platform
+[root@ip-172-31-26-128 ~]# ^C
+[root@ip-172-31-26-128 ~]# 
