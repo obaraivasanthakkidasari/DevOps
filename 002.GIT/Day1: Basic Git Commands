@@ -1,1 +1,619 @@
+Day 1 Git Commands Practice:
+
+Git Stages:
+1)Working Directory
+2)Staging Area
+3)Repository 
+
+Working Directory-Staging Area-Git add
+Staging Area-Repository- Git Commit
+
+
+ ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Wed Feb  4 22:44:41 2026 from 3.16.146.5
+[ec2-user@ip-172-31-26-128 ~]$ sudo -i\
+> clear
+usage: sudo -h | -K | -k | -V
+usage: sudo -v [-ABkNnS] [-g group] [-h host] [-p prompt] [-u user]
+usage: sudo -l [-ABkNnS] [-g group] [-h host] [-p prompt] [-U user]
+            [-u user] [command [arg ...]]
+usage: sudo [-ABbEHkNnPS] [-r role] [-t type] [-C num] [-D directory]
+            [-g group] [-h host] [-p prompt] [-R directory] [-T timeout]
+            [-u user] [VAR=value] [-i | -s] [command [arg ...]]
+usage: sudo -e [-ABkNnS] [-r role] [-t type] [-C num] [-D directory]
+            [-g group] [-h host] [-p prompt] [-R directory] [-T timeout]
+            [-u user] file ...
+[ec2-user@ip-172-31-26-128 ~]$ sudo -i
+[root@ip-172-31-26-128 ~]# mkdir paytm
+[root@ip-172-31-26-128 ~]# cd paytm
+[root@ip-172-31-26-128 paytm]# yum install git -y
+Last metadata expiration check: 18:47:12 ago on Wed Feb  4 22:11:43 2026.
+Dependencies resolved.
+====================================================================================================================================================================
+ Package                                  Architecture                   Version                                          Repository                           Size
+====================================================================================================================================================================
+Installing:
+ git                                      x86_64                         2.50.1-1.amzn2023.0.1                            amazonlinux                          53 k
+Installing dependencies:
+ git-core                                 x86_64                         2.50.1-1.amzn2023.0.1                            amazonlinux                         4.9 M
+ git-core-doc                             noarch                         2.50.1-1.amzn2023.0.1                            amazonlinux                         2.8 M
+ perl-Error                               noarch                         1:0.17029-5.amzn2023.0.2                         amazonlinux                          41 k
+ perl-File-Find                           noarch                         1.37-477.amzn2023.0.7                            amazonlinux                          25 k
+ perl-Git                                 noarch                         2.50.1-1.amzn2023.0.1                            amazonlinux                          41 k
+ perl-TermReadKey                         x86_64                         2.38-9.amzn2023.0.2                              amazonlinux                          36 k
+ perl-lib                                 x86_64                         0.65-477.amzn2023.0.7                            amazonlinux                          15 k
+
+Transaction Summary
+====================================================================================================================================================================
+Install  8 Packages
+
+Total download size: 7.9 M
+Installed size: 41 M
+Downloading Packages:
+(1/8): git-2.50.1-1.amzn2023.0.1.x86_64.rpm                                                                                         1.4 MB/s |  53 kB     00:00    
+(2/8): git-core-doc-2.50.1-1.amzn2023.0.1.noarch.rpm                                                                                 43 MB/s | 2.8 MB     00:00    
+(3/8): perl-Error-0.17029-5.amzn2023.0.2.noarch.rpm                                                                                 1.2 MB/s |  41 kB     00:00    
+(4/8): git-core-2.50.1-1.amzn2023.0.1.x86_64.rpm                                                                                     50 MB/s | 4.9 MB     00:00    
+(5/8): perl-File-Find-1.37-477.amzn2023.0.7.noarch.rpm                                                                              749 kB/s |  25 kB     00:00    
+(6/8): perl-Git-2.50.1-1.amzn2023.0.1.noarch.rpm                                                                                    1.3 MB/s |  41 kB     00:00    
+(7/8): perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64.rpm                                                                              1.5 MB/s |  36 kB     00:00    
+(8/8): perl-lib-0.65-477.amzn2023.0.7.x86_64.rpm                                                                                    635 kB/s |  15 kB     00:00    
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                47 MB/s | 7.9 MB     00:00     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                            1/1 
+  Installing       : git-core-2.50.1-1.amzn2023.0.1.x86_64                                                                                                      1/8 
+  Installing       : git-core-doc-2.50.1-1.amzn2023.0.1.noarch                                                                                                  2/8 
+  Installing       : perl-lib-0.65-477.amzn2023.0.7.x86_64                                                                                                      3/8 
+  Installing       : perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64                                                                                                4/8 
+  Installing       : perl-File-Find-1.37-477.amzn2023.0.7.noarch                                                                                                5/8 
+  Installing       : perl-Error-1:0.17029-5.amzn2023.0.2.noarch                                                                                                 6/8 
+  Installing       : perl-Git-2.50.1-1.amzn2023.0.1.noarch                                                                                                      7/8 
+  Installing       : git-2.50.1-1.amzn2023.0.1.x86_64                                                                                                           8/8 
+  Running scriptlet: git-2.50.1-1.amzn2023.0.1.x86_64                                                                                                           8/8 
+  Verifying        : git-2.50.1-1.amzn2023.0.1.x86_64                                                                                                           1/8 
+  Verifying        : git-core-2.50.1-1.amzn2023.0.1.x86_64                                                                                                      2/8 
+  Verifying        : git-core-doc-2.50.1-1.amzn2023.0.1.noarch                                                                                                  3/8 
+  Verifying        : perl-Error-1:0.17029-5.amzn2023.0.2.noarch                                                                                                 4/8 
+  Verifying        : perl-File-Find-1.37-477.amzn2023.0.7.noarch                                                                                                5/8 
+  Verifying        : perl-Git-2.50.1-1.amzn2023.0.1.noarch                                                                                                      6/8 
+  Verifying        : perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64                                                                                                7/8 
+  Verifying        : perl-lib-0.65-477.amzn2023.0.7.x86_64                                                                                                      8/8 
+
+Installed:
+  git-2.50.1-1.amzn2023.0.1.x86_64                       git-core-2.50.1-1.amzn2023.0.1.x86_64                  git-core-doc-2.50.1-1.amzn2023.0.1.noarch           
+  perl-Error-1:0.17029-5.amzn2023.0.2.noarch             perl-File-Find-1.37-477.amzn2023.0.7.noarch            perl-Git-2.50.1-1.amzn2023.0.1.noarch               
+  perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64            perl-lib-0.65-477.amzn2023.0.7.x86_64                 
+
+Complete!
+[root@ip-172-31-26-128 paytm]# git --version
+git version 2.50.1
+[root@ip-172-31-26-128 paytm]# touch index.html
+[root@ip-172-31-26-128 paytm]# git status
+fatal: not a git repository (or any of the parent directories): .git
+[root@ip-172-31-26-128 paytm]# git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+Initialized empty Git repository in /root/paytm/.git/
+[root@ip-172-31-26-128 paytm]# git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+[root@ip-172-31-26-128 paytm]# git add index.html
+[root@ip-172-31-26-128 paytm]# git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+[root@ip-172-31-26-128 paytm]# git commit -m "commit1" index.html
+[master (root-commit) b38a408] commit1
+ Committer: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+[root@ip-172-31-26-128 paytm]# git status
+On branch master
+nothing to commit, working tree clean
+[root@ip-172-31-26-128 paytm]# touch file1
+[root@ip-172-31-26-128 paytm]# git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1
+
+nothing added to commit but untracked files present (use "git add" to track)
+[root@ip-172-31-26-128 paytm]# git add file1
+[root@ip-172-31-26-128 paytm]# git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file1
+
+[root@ip-172-31-26-128 paytm]# git commit -m "commit 2" file1
+[master c47e197] commit 2
+ Committer: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file1
+[root@ip-172-31-26-128 paytm]# git status
+On branch master
+nothing to commit, working tree clean
+[root@ip-172-31-26-128 paytm]# git log
+commit c47e1975ed808c933e960d3be3bbbfe67167733b (HEAD -> master)
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:03:56 2026 +0000
+
+    commit 2
+
+commit b38a408e9279dddb998d7af8d7229eadf32cc7a2
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:02:11 2026 +0000
+
+    commit1
+[root@ip-172-31-26-128 paytm]# touch file2
+[root@ip-172-31-26-128 paytm]# git add file2
+[root@ip-172-31-26-128 paytm]# git commit -m "commit3" -y
+error: unknown switch `y'
+usage: git commit [-a | --interactive | --patch] [-s] [-v] [-u[<mode>]] [--amend]
+                  [--dry-run] [(-c | -C | --squash) <commit> | --fixup [(amend|reword):]<commit>]
+                  [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+                  [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+                  [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+                  [-i | -o] [--pathspec-from-file=<file> [--pathspec-file-nul]]
+                  [(--trailer <token>[(=|:)<value>])...] [-S[<keyid>]]
+                  [--] [<pathspec>...]
+
+    -q, --[no-]quiet      suppress summary after successful commit
+    -v, --[no-]verbose    show diff in commit message template
+
+Commit message options
+    -F, --[no-]file <file>
+                          read message from file
+    --[no-]author <author>
+                          override author for commit
+    --[no-]date <date>    override date for commit
+    -m, --[no-]message <message>
+                          commit message
+    -c, --[no-]reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --[no-]reuse-message <commit>
+                          reuse message from specified commit
+    --[no-]fixup [(amend|reword):]commit
+                          use autosquash formatted message to fixup or amend/reword specified commit
+    --[no-]squash <commit>
+                          use autosquash formatted message to squash specified commit
+    --[no-]reset-author   the commit is authored by me now (used with -C/-c/--amend)
+    --trailer <trailer>   add custom trailer(s)
+    -s, --[no-]signoff    add a Signed-off-by trailer
+    -t, --[no-]template <file>
+                          use specified template file
+    -e, --[no-]edit       force edit of commit
+    --[no-]cleanup <mode> how to strip spaces and #comments from message
+    --[no-]status         include status in commit message template
+    -S, --[no-]gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --[no-]all        commit all changed files
+    -i, --[no-]include    add specified files to index for commit
+    --[no-]interactive    interactively add files
+    -p, --[no-]patch      interactively add changes
+    -o, --[no-]only       commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --verify              opposite of --no-verify
+    --[no-]dry-run        show what would be committed
+    --[no-]short          show status concisely
+    --[no-]branch         show branch information
+    --[no-]ahead-behind   compute full ahead/behind values
+    --[no-]porcelain      machine-readable output
+    --[no-]long           show status in long format (default)
+    -z, --[no-]null       terminate entries with NUL
+    --[no-]amend          amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    --post-rewrite        opposite of --no-post-rewrite
+    -u, --[no-]untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --[no-]pathspec-from-file <file>
+                          read pathspec from file
+    --[no-]pathspec-file-nul
+                          with --pathspec-from-file, pathspec elements are separated with NUL character
+
+[root@ip-172-31-26-128 paytm]# git log
+commit c47e1975ed808c933e960d3be3bbbfe67167733b (HEAD -> master)
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:03:56 2026 +0000
+
+    commit 2
+
+commit b38a408e9279dddb998d7af8d7229eadf32cc7a2
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:02:11 2026 +0000
+
+    commit1
+[root@ip-172-31-26-128 paytm]# touch file3
+[root@ip-172-31-26-128 paytm]# git add file3
+[root@ip-172-31-26-128 paytm]# git commit -m "commit 3" file3 -y
+error: unknown switch `y'
+usage: git commit [-a | --interactive | --patch] [-s] [-v] [-u[<mode>]] [--amend]
+                  [--dry-run] [(-c | -C | --squash) <commit> | --fixup [(amend|reword):]<commit>]
+                  [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+                  [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+                  [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+                  [-i | -o] [--pathspec-from-file=<file> [--pathspec-file-nul]]
+                  [(--trailer <token>[(=|:)<value>])...] [-S[<keyid>]]
+                  [--] [<pathspec>...]
+
+    -q, --[no-]quiet      suppress summary after successful commit
+    -v, --[no-]verbose    show diff in commit message template
+
+Commit message options
+    -F, --[no-]file <file>
+                          read message from file
+    --[no-]author <author>
+                          override author for commit
+    --[no-]date <date>    override date for commit
+    -m, --[no-]message <message>
+                          commit message
+    -c, --[no-]reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --[no-]reuse-message <commit>
+                          reuse message from specified commit
+    --[no-]fixup [(amend|reword):]commit
+                          use autosquash formatted message to fixup or amend/reword specified commit
+    --[no-]squash <commit>
+                          use autosquash formatted message to squash specified commit
+    --[no-]reset-author   the commit is authored by me now (used with -C/-c/--amend)
+    --trailer <trailer>   add custom trailer(s)
+    -s, --[no-]signoff    add a Signed-off-by trailer
+    -t, --[no-]template <file>
+                          use specified template file
+    -e, --[no-]edit       force edit of commit
+    --[no-]cleanup <mode> how to strip spaces and #comments from message
+    --[no-]status         include status in commit message template
+    -S, --[no-]gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --[no-]all        commit all changed files
+    -i, --[no-]include    add specified files to index for commit
+    --[no-]interactive    interactively add files
+    -p, --[no-]patch      interactively add changes
+    -o, --[no-]only       commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --verify              opposite of --no-verify
+    --[no-]dry-run        show what would be committed
+    --[no-]short          show status concisely
+    --[no-]branch         show branch information
+    --[no-]ahead-behind   compute full ahead/behind values
+    --[no-]porcelain      machine-readable output
+    --[no-]long           show status in long format (default)
+    -z, --[no-]null       terminate entries with NUL
+    --[no-]amend          amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    --post-rewrite        opposite of --no-post-rewrite
+    -u, --[no-]untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --[no-]pathspec-from-file <file>
+                          read pathspec from file
+    --[no-]pathspec-file-nul
+                          with --pathspec-from-file, pathspec elements are separated with NUL character
+
+[root@ip-172-31-26-128 paytm]# touch file3
+[root@ip-172-31-26-128 paytm]# git add file3
+[root@ip-172-31-26-128 paytm]# git commit -m "abcd" file3 -y
+error: unknown switch `y'
+usage: git commit [-a | --interactive | --patch] [-s] [-v] [-u[<mode>]] [--amend]
+                  [--dry-run] [(-c | -C | --squash) <commit> | --fixup [(amend|reword):]<commit>]
+                  [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+                  [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+                  [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+                  [-i | -o] [--pathspec-from-file=<file> [--pathspec-file-nul]]
+                  [(--trailer <token>[(=|:)<value>])...] [-S[<keyid>]]
+                  [--] [<pathspec>...]
+
+    -q, --[no-]quiet      suppress summary after successful commit
+    -v, --[no-]verbose    show diff in commit message template
+
+Commit message options
+    -F, --[no-]file <file>
+                          read message from file
+    --[no-]author <author>
+                          override author for commit
+    --[no-]date <date>    override date for commit
+    -m, --[no-]message <message>
+                          commit message
+    -c, --[no-]reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --[no-]reuse-message <commit>
+                          reuse message from specified commit
+    --[no-]fixup [(amend|reword):]commit
+                          use autosquash formatted message to fixup or amend/reword specified commit
+    --[no-]squash <commit>
+                          use autosquash formatted message to squash specified commit
+    --[no-]reset-author   the commit is authored by me now (used with -C/-c/--amend)
+    --trailer <trailer>   add custom trailer(s)
+    -s, --[no-]signoff    add a Signed-off-by trailer
+    -t, --[no-]template <file>
+                          use specified template file
+    -e, --[no-]edit       force edit of commit
+    --[no-]cleanup <mode> how to strip spaces and #comments from message
+    --[no-]status         include status in commit message template
+    -S, --[no-]gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --[no-]all        commit all changed files
+    -i, --[no-]include    add specified files to index for commit
+    --[no-]interactive    interactively add files
+    -p, --[no-]patch      interactively add changes
+    -o, --[no-]only       commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --verify              opposite of --no-verify
+    --[no-]dry-run        show what would be committed
+    --[no-]short          show status concisely
+    --[no-]branch         show branch information
+    --[no-]ahead-behind   compute full ahead/behind values
+    --[no-]porcelain      machine-readable output
+    --[no-]long           show status in long format (default)
+    -z, --[no-]null       terminate entries with NUL
+    --[no-]amend          amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    --post-rewrite        opposite of --no-post-rewrite
+    -u, --[no-]untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --[no-]pathspec-from-file <file>
+                          read pathspec from file
+    --[no-]pathspec-file-nul
+                          with --pathspec-from-file, pathspec elements are separated with NUL character
+
+[root@ip-172-31-26-128 paytm]# git log
+commit c47e1975ed808c933e960d3be3bbbfe67167733b (HEAD -> master)
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:03:56 2026 +0000
+
+    commit 2
+
+commit b38a408e9279dddb998d7af8d7229eadf32cc7a2
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:02:11 2026 +0000
+
+    commit1
+[root@ip-172-31-26-128 paytm]# touch file5
+[root@ip-172-31-26-128 paytm]# git add file5
+[root@ip-172-31-26-128 paytm]# git commit -m "file5 commit" file5
+[master aec5406] file5 commit
+ Committer: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file5
+[root@ip-172-31-26-128 paytm]# git log
+commit aec54065f54fc00b27f8058a8ea095e8c60a1b40 (HEAD -> master)
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:07:49 2026 +0000
+
+    file5 commit
+
+commit c47e1975ed808c933e960d3be3bbbfe67167733b
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:03:56 2026 +0000
+
+    commit 2
+
+commit b38a408e9279dddb998d7af8d7229eadf32cc7a2
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:02:11 2026 +0000
+
+    commit1
+[root@ip-172-31-26-128 paytm]# touch file6
+[root@ip-172-31-26-128 paytm]# git add file6
+[root@ip-172-31-26-128 paytm]# git commit -m  "file 6 commit" file6
+[master a1ad91b] file 6 commit
+ Committer: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file6
+[root@ip-172-31-26-128 paytm]# git log
+commit a1ad91b4cabdccf86fe61316f2185e4e7817fca9 (HEAD -> master)
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:08:38 2026 +0000
+
+    file 6 commit
+
+commit aec54065f54fc00b27f8058a8ea095e8c60a1b40
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:07:49 2026 +0000
+
+    file5 commit
+
+commit c47e1975ed808c933e960d3be3bbbfe67167733b
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:03:56 2026 +0000
+
+    commit 2
+
+commit b38a408e9279dddb998d7af8d7229eadf32cc7a2
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:02:11 2026 +0000
+
+    commit1
+[root@ip-172-31-26-128 paytm]# git log --oneliner
+fatal: unrecognized argument: --oneliner
+[root@ip-172-31-26-128 paytm]# git log --oneline
+a1ad91b (HEAD -> master) file 6 commit
+aec5406 file5 commit
+c47e197 commit 2
+b38a408 commit1
+[root@ip-172-31-26-128 paytm]# git log --oneline -2
+a1ad91b (HEAD -> master) file 6 commit
+aec5406 file5 commit
+[root@ip-172-31-26-128 paytm]# git log --oneline -1
+a1ad91b (HEAD -> master) file 6 commit
+[root@ip-172-31-26-128 paytm]# git log --oneline -3
+a1ad91b (HEAD -> master) file 6 commit
+aec5406 file5 commit
+c47e197 commit 2
+[root@ip-172-31-26-128 paytm]# git log
+commit a1ad91b4cabdccf86fe61316f2185e4e7817fca9 (HEAD -> master)
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:08:38 2026 +0000
+
+    file 6 commit
+
+commit aec54065f54fc00b27f8058a8ea095e8c60a1b40
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:07:49 2026 +0000
+
+    file5 commit
+
+commit c47e1975ed808c933e960d3be3bbbfe67167733b
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:03:56 2026 +0000
+
+    commit 2
+
+commit b38a408e9279dddb998d7af8d7229eadf32cc7a2
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:02:11 2026 +0000
+
+    commit1
+[root@ip-172-31-26-128 paytm]# git config user.name "chris"
+[root@ip-172-31-26-128 paytm]# git config user.email "chriskarteek@gmail.com"
+[root@ip-172-31-26-128 paytm]# git log
+commit a1ad91b4cabdccf86fe61316f2185e4e7817fca9 (HEAD -> master)
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:08:38 2026 +0000
+
+    file 6 commit
+
+commit aec54065f54fc00b27f8058a8ea095e8c60a1b40
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:07:49 2026 +0000
+
+    file5 commit
+
+commit c47e1975ed808c933e960d3be3bbbfe67167733b
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:03:56 2026 +0000
+
+    commit 2
+
+commit b38a408e9279dddb998d7af8d7229eadf32cc7a2
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:02:11 2026 +0000
+
+    commit1
+[root@ip-172-31-26-128 paytm]# touch file7
+[root@ip-172-31-26-128 paytm]# git add file7
+[root@ip-172-31-26-128 paytm]# git commit -m "New" file7
+[master 02da833] New
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file7
+[root@ip-172-31-26-128 paytm]# git log
+commit 02da833def5bf871b77f2f87ad7639a7f715a586 (HEAD -> master)
+Author: chris <chriskarteek@gmail.com>
+Date:   Thu Feb 5 17:13:26 2026 +0000
+
+    New
+
+commit a1ad91b4cabdccf86fe61316f2185e4e7817fca9
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:08:38 2026 +0000
+
+    file 6 commit
+
+commit aec54065f54fc00b27f8058a8ea095e8c60a1b40
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:07:49 2026 +0000
+
+    file5 commit
+
+commit c47e1975ed808c933e960d3be3bbbfe67167733b
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:03:56 2026 +0000
+
+    commit 2
+
+commit b38a408e9279dddb998d7af8d7229eadf32cc7a2
+Author: root <root@ip-172-31-26-128.us-east-2.compute.internal>
+Date:   Thu Feb 5 17:02:11 2026 +0000
+
+    commit1
+[root@ip-172-31-26-128 paytm]# 
 
