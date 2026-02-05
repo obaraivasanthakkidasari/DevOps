@@ -1,4 +1,4 @@
-Day 2:  Git Branches & Workflow
+Day 2:  Git Branches & Workflow, Including AWE--EC2 LINUX--GIT.
 
 HISTORY:
     1  yum install git -y
@@ -64,3 +64,417 @@ HISTORY:
    61  ll
    62  history
 
+
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Wed Feb  4 19:58:19 2026 from 3.16.146.5
+[ec2-user@ip-172-31-28-21 ~]$ sudo -i
+[root@ip-172-31-28-21 ~]# mkdir paytm
+[root@ip-172-31-28-21 ~]# cd paytm/
+[root@ip-172-31-28-21 paytm]# yum install git -y
+Amazon Linux 2023 Kernel Livepatch repository                                                                                       243 kB/s |  30 kB     00:00    
+Dependencies resolved.
+====================================================================================================================================================================
+ Package                                  Architecture                   Version                                          Repository                           Size
+====================================================================================================================================================================
+Installing:
+ git                                      x86_64                         2.50.1-1.amzn2023.0.1                            amazonlinux                          53 k
+Installing dependencies:
+ git-core                                 x86_64                         2.50.1-1.amzn2023.0.1                            amazonlinux                         4.9 M
+ git-core-doc                             noarch                         2.50.1-1.amzn2023.0.1                            amazonlinux                         2.8 M
+ perl-Error                               noarch                         1:0.17029-5.amzn2023.0.2                         amazonlinux                          41 k
+ perl-File-Find                           noarch                         1.37-477.amzn2023.0.7                            amazonlinux                          25 k
+ perl-Git                                 noarch                         2.50.1-1.amzn2023.0.1                            amazonlinux                          41 k
+ perl-TermReadKey                         x86_64                         2.38-9.amzn2023.0.2                              amazonlinux                          36 k
+ perl-lib                                 x86_64                         0.65-477.amzn2023.0.7                            amazonlinux                          15 k
+
+Transaction Summary
+====================================================================================================================================================================
+Install  8 Packages
+
+Total download size: 7.9 M
+Installed size: 41 M
+Downloading Packages:
+(1/8): git-2.50.1-1.amzn2023.0.1.x86_64.rpm                                                                                         1.5 MB/s |  53 kB     00:00    
+(2/8): git-core-doc-2.50.1-1.amzn2023.0.1.noarch.rpm                                                                                 46 MB/s | 2.8 MB     00:00    
+(3/8): perl-Error-0.17029-5.amzn2023.0.2.noarch.rpm                                                                                 1.4 MB/s |  41 kB     00:00    
+(4/8): git-core-2.50.1-1.amzn2023.0.1.x86_64.rpm                                                                                     54 MB/s | 4.9 MB     00:00    
+(5/8): perl-File-Find-1.37-477.amzn2023.0.7.noarch.rpm                                                                              815 kB/s |  25 kB     00:00    
+(6/8): perl-Git-2.50.1-1.amzn2023.0.1.noarch.rpm                                                                                    1.4 MB/s |  41 kB     00:00    
+(7/8): perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64.rpm                                                                              1.5 MB/s |  36 kB     00:00    
+(8/8): perl-lib-0.65-477.amzn2023.0.7.x86_64.rpm                                                                                    512 kB/s |  15 kB     00:00    
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                49 MB/s | 7.9 MB     00:00     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                                                                                            1/1 
+  Installing       : git-core-2.50.1-1.amzn2023.0.1.x86_64                                                                                                      1/8 
+  Installing       : git-core-doc-2.50.1-1.amzn2023.0.1.noarch                                                                                                  2/8 
+  Installing       : perl-lib-0.65-477.amzn2023.0.7.x86_64                                                                                                      3/8 
+  Installing       : perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64                                                                                                4/8 
+  Installing       : perl-File-Find-1.37-477.amzn2023.0.7.noarch                                                                                                5/8 
+  Installing       : perl-Error-1:0.17029-5.amzn2023.0.2.noarch                                                                                                 6/8 
+  Installing       : perl-Git-2.50.1-1.amzn2023.0.1.noarch                                                                                                      7/8 
+  Installing       : git-2.50.1-1.amzn2023.0.1.x86_64                                                                                                           8/8 
+  Running scriptlet: git-2.50.1-1.amzn2023.0.1.x86_64                                                                                                           8/8 
+  Verifying        : git-2.50.1-1.amzn2023.0.1.x86_64                                                                                                           1/8 
+  Verifying        : git-core-2.50.1-1.amzn2023.0.1.x86_64                                                                                                      2/8 
+  Verifying        : git-core-doc-2.50.1-1.amzn2023.0.1.noarch                                                                                                  3/8 
+  Verifying        : perl-Error-1:0.17029-5.amzn2023.0.2.noarch                                                                                                 4/8 
+  Verifying        : perl-File-Find-1.37-477.amzn2023.0.7.noarch                                                                                                5/8 
+  Verifying        : perl-Git-2.50.1-1.amzn2023.0.1.noarch                                                                                                      6/8 
+  Verifying        : perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64                                                                                                7/8 
+  Verifying        : perl-lib-0.65-477.amzn2023.0.7.x86_64                                                                                                      8/8 
+
+Installed:
+  git-2.50.1-1.amzn2023.0.1.x86_64                       git-core-2.50.1-1.amzn2023.0.1.x86_64                  git-core-doc-2.50.1-1.amzn2023.0.1.noarch           
+  perl-Error-1:0.17029-5.amzn2023.0.2.noarch             perl-File-Find-1.37-477.amzn2023.0.7.noarch            perl-Git-2.50.1-1.amzn2023.0.1.noarch               
+  perl-TermReadKey-2.38-9.amzn2023.0.2.x86_64            perl-lib-0.65-477.amzn2023.0.7.x86_64                 
+
+Complete!
+[root@ip-172-31-28-21 paytm]# git status
+fatal: not a git repository (or any of the parent directories): .git
+[root@ip-172-31-28-21 paytm]# git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+Initialized empty Git repository in /root/paytm/.git/
+[root@ip-172-31-28-21 paytm]# ll -a
+total 0
+drwxr-xr-x. 3 root root  18 Feb  5 18:11 .
+dr-xr-x---. 4 root root 153 Feb  5 18:10 ..
+drwxr-xr-x. 6 root root 103 Feb  5 18:11 .git
+[root@ip-172-31-28-21 paytm]# touch index.html
+[root@ip-172-31-28-21 paytm]# git add index.html
+[root@ip-172-31-28-21 paytm]# git commit -m "commit1"  index.html
+[master (root-commit) 344b266] commit1
+ Committer: root <root@ip-172-31-28-21.us-east-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+[root@ip-172-31-28-21 paytm]# git log
+commit 344b266232525e17bd18faa4f4943a07707e815d (HEAD -> master)
+Author: root <root@ip-172-31-28-21.us-east-2.compute.internal>
+Date:   Thu Feb 5 18:13:30 2026 +0000
+
+    commit1
+[root@ip-172-31-28-21 paytm]# git branch
+* master
+[root@ip-172-31-28-21 paytm]# git branch movies
+[root@ip-172-31-28-21 paytm]# git branch
+* master
+  movies
+[root@ip-172-31-28-21 paytm]# git checkout movies
+Switched to branch 'movies'
+[root@ip-172-31-28-21 paytm]# git branch
+  master
+* movies
+[root@ip-172-31-28-21 paytm]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb  5 18:12 index.html
+[root@ip-172-31-28-21 paytm]# touch movies{1..5}
+[root@ip-172-31-28-21 paytm]# git add movies*
+[root@ip-172-31-28-21 paytm]# git commit -m "dev-1" movies*
+[movies d24ee50] dev-1
+ Committer: root <root@ip-172-31-28-21.us-east-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 5 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 movies1
+ create mode 100644 movies2
+ create mode 100644 movies3
+ create mode 100644 movies4
+ create mode 100644 movies5
+[root@ip-172-31-28-21 paytm]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb  5 18:12 index.html
+-rw-r--r--. 1 root root 0 Feb  5 18:22 movies1
+-rw-r--r--. 1 root root 0 Feb  5 18:22 movies2
+-rw-r--r--. 1 root root 0 Feb  5 18:22 movies3
+-rw-r--r--. 1 root root 0 Feb  5 18:22 movies4
+-rw-r--r--. 1 root root 0 Feb  5 18:22 movies5
+[root@ip-172-31-28-21 paytm]# git branch
+  master
+* movies
+[root@ip-172-31-28-21 paytm]# git branch dth
+[root@ip-172-31-28-21 paytm]# git branch
+  dth
+  master
+* movies
+[root@ip-172-31-28-21 paytm]# git checkout branch
+error: pathspec 'branch' did not match any file(s) known to git
+[root@ip-172-31-28-21 paytm]# git checkout dth
+Switched to branch 'dth'
+[root@ip-172-31-28-21 paytm]# git branch
+* dth
+  master
+  movies
+[root@ip-172-31-28-21 paytm]# touch dth{1..5}
+[root@ip-172-31-28-21 paytm]# git add dth*
+[root@ip-172-31-28-21 paytm]# git commit -m "dev-2" dth*
+[dth 94ad597] dev-2
+ Committer: root <root@ip-172-31-28-21.us-east-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 5 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 dth1
+ create mode 100644 dth2
+ create mode 100644 dth3
+ create mode 100644 dth4
+ create mode 100644 dth5
+[root@ip-172-31-28-21 paytm]# git branch
+* dth
+  master
+  movies
+[root@ip-172-31-28-21 paytm]# git checkout -b train
+Switched to a new branch 'train'
+[root@ip-172-31-28-21 paytm]# git branch
+  dth
+  master
+  movies
+* train
+[root@ip-172-31-28-21 paytm]# touch train{1..5}
+[root@ip-172-31-28-21 paytm]# git add train*
+[root@ip-172-31-28-21 paytm]# git commit -m "dev-3" train*
+[train 6fc3964] dev-3
+ Committer: root <root@ip-172-31-28-21.us-east-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 5 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 train1
+ create mode 100644 train2
+ create mode 100644 train3
+ create mode 100644 train4
+ create mode 100644 train5
+[root@ip-172-31-28-21 paytm]# git branch
+  dth
+  master
+  movies
+* train
+[root@ip-172-31-28-21 paytm]# git checkout -b recharge
+Switched to a new branch 'recharge'
+[root@ip-172-31-28-21 paytm]# git branch
+  dth
+  master
+  movies
+* recharge
+  train
+[root@ip-172-31-28-21 paytm]# touch recharge{1..5}
+[root@ip-172-31-28-21 paytm]# git add recharge*
+[root@ip-172-31-28-21 paytm]# git commit -m "dev-4" recharge*
+[recharge 6eb07e1] dev-4
+ Committer: root <root@ip-172-31-28-21.us-east-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 5 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 recharge1
+ create mode 100644 recharge2
+ create mode 100644 recharge3
+ create mode 100644 recharge4
+ create mode 100644 recharge5
+[root@ip-172-31-28-21 paytm]# git branch 
+  dth
+  master
+  movies
+* recharge
+  train
+[root@ip-172-31-28-21 paytm]# sudo -i
+[root@ip-172-31-28-21 ~]# cd paytm
+[root@ip-172-31-28-21 paytm]# ll -a
+total 16
+drwxr-xr-x. 3 root root 16384 Feb  5 18:30 .
+dr-xr-x---. 4 root root   169 Feb  5 18:31 ..
+drwxr-xr-x. 7 root root   150 Feb  5 18:31 .git
+-rw-r--r--. 1 root root     0 Feb  5 18:26 dth1
+-rw-r--r--. 1 root root     0 Feb  5 18:26 dth2
+-rw-r--r--. 1 root root     0 Feb  5 18:26 dth3
+-rw-r--r--. 1 root root     0 Feb  5 18:26 dth4
+-rw-r--r--. 1 root root     0 Feb  5 18:26 dth5
+-rw-r--r--. 1 root root     0 Feb  5 18:12 index.html
+-rw-r--r--. 1 root root     0 Feb  5 18:22 movies1
+-rw-r--r--. 1 root root     0 Feb  5 18:22 movies2
+-rw-r--r--. 1 root root     0 Feb  5 18:22 movies3
+-rw-r--r--. 1 root root     0 Feb  5 18:22 movies4
+-rw-r--r--. 1 root root     0 Feb  5 18:22 movies5
+-rw-r--r--. 1 root root     0 Feb  5 18:30 recharge1
+-rw-r--r--. 1 root root     0 Feb  5 18:30 recharge2
+-rw-r--r--. 1 root root     0 Feb  5 18:30 recharge3
+-rw-r--r--. 1 root root     0 Feb  5 18:30 recharge4
+-rw-r--r--. 1 root root     0 Feb  5 18:30 recharge5
+-rw-r--r--. 1 root root     0 Feb  5 18:29 train1
+-rw-r--r--. 1 root root     0 Feb  5 18:29 train2
+-rw-r--r--. 1 root root     0 Feb  5 18:29 train3
+-rw-r--r--. 1 root root     0 Feb  5 18:29 train4
+-rw-r--r--. 1 root root     0 Feb  5 18:29 train5
+[root@ip-172-31-28-21 paytm]# git branch
+  dth
+  master
+  movies
+* recharge
+  train
+[root@ip-172-31-28-21 paytm]# git remote add origin https://github.com/obaraivasanthakkidasari/paytm.git
+[root@ip-172-31-28-21 paytm]# git push orgin master
+fatal: 'orgin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[root@ip-172-31-28-21 paytm]# git push origin master
+Username for 'https://github.com': ^C
+[root@ip-172-31-28-21 paytm]# 
+[root@ip-172-31-28-21 paytm]# git remote add origin https://github.com/obaraivasanthakkidasari/paytm.git
+error: remote origin already exists.
+[root@ip-172-31-28-21 paytm]# git push origin master
+Username for 'https://github.com': obaraivasanthakkidasari
+Password for 'https://obaraivasanthakkidasari@github.com': 
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 222 bytes | 222.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/obaraivasanthakkidasari/paytm.git
+ * [new branch]      master -> master
+[root@ip-172-31-28-21 paytm]# git push origin movies
+Username for 'https://github.com': obaraivasanthakkidasari
+Password for 'https://obaraivasanthakkidasari@github.com': 
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 270 bytes | 270.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: 
+remote: Create a pull request for 'movies' on GitHub by visiting:
+remote:      https://github.com/obaraivasanthakkidasari/paytm/pull/new/movies
+remote: 
+To https://github.com/obaraivasanthakkidasari/paytm.git
+ * [new branch]      movies -> movies
+[root@ip-172-31-28-21 paytm]# git push origin dtm
+error: src refspec dtm does not match any
+error: failed to push some refs to 'https://github.com/obaraivasanthakkidasari/paytm.git'
+[root@ip-172-31-28-21 paytm]# git push origin dth
+Username for 'https://github.com': obaraivasanthakkidasari
+Password for 'https://obaraivasanthakkidasari@github.com': 
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 259 bytes | 259.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'dth' on GitHub by visiting:
+remote:      https://github.com/obaraivasanthakkidasari/paytm/pull/new/dth
+remote: 
+To https://github.com/obaraivasanthakkidasari/paytm.git
+ * [new branch]      dth -> dth
+[root@ip-172-31-28-21 paytm]# git push origin train
+Username for 'https://github.com': obaraivasanthakkidasari
+Password for 'https://obaraivasanthakkidasari@github.com': 
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 260 bytes | 260.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'train' on GitHub by visiting:
+remote:      https://github.com/obaraivasanthakkidasari/paytm/pull/new/train
+remote: 
+To https://github.com/obaraivasanthakkidasari/paytm.git
+ * [new branch]      train -> train
+[root@ip-172-31-28-21 paytm]# git push origin recharge 
+Username for 'https://github.com': ^C
+[root@ip-172-31-28-21 paytm]# git push origin recharge
+Username for 'https://github.com': obaraivasanthakkidasari                   
+Password for 'https://obaraivasanthakkidasari@github.com': 
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/obaraivasanthakkidasari/paytm.git/'
+[root@ip-172-31-28-21 paytm]# git push origin recharge
+Username for 'https://github.com': obaraivasanthakkidasari
+Password for 'https://obaraivasanthakkidasari@github.com': 
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 270 bytes | 270.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'recharge' on GitHub by visiting:
+remote:      https://github.com/obaraivasanthakkidasari/paytm/pull/new/recharge
+remote: 
+To https://github.com/obaraivasanthakkidasari/paytm.git
+ * [new branch]      recharge -> recharge
+[root@ip-172-31-28-21 paytm]# 
