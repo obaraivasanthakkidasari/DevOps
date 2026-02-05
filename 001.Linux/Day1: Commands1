@@ -1,5 +1,31 @@
  Linux Commands 1:
 
+
+
+touch file1		: to create a file
+ls/ll			: to list the files
+cat file1		: to print the content of a file
+more file1		: to print the content of a file
+cat>>file1		: to insert the content
+enter + ctrl d		: to save and quit
+cp file1 file2		: to copy the content from file1 to file3
+mv file1 raham		: to move/rename a file
+rm file1		: to remove a file
+rm file2 -f		: to remove a file forcefully
+rm * -f			: to remove all files at a time
+touch file{1..20}	: to create file1 to file20
+rm file{6..20} -f	: to remove file6 to file20
+wc file1		: to print num of lines, words and charcters
+head file1		: to print top 10 lines of a file
+head -7 file1		: to print top 7 lines of a file
+head -12 file1		: to print top 12 lines of a file
+tail file1		: to print bottom 10 lines of a file
+tail -7 file1		: to print bottom 7 lines of a file
+tail -12 file1		: to print bottom 12 lines of a file
+sed -n '5,15p' file2	: to print line 5 to line 15 of a file
+
+
+
 ,     #_
    ~\_  ####_        Amazon Linux 2023
   ~~  \_#####\
