@@ -1,7 +1,5 @@
  Linux Commands 1:
 
-
-
 touch file1		: to create a file
 ls/ll			: to list the files
 cat file1		: to print the content of a file
@@ -23,8 +21,6 @@ tail file1		: to print bottom 10 lines of a file
 tail -7 file1		: to print bottom 7 lines of a file
 tail -12 file1		: to print bottom 12 lines of a file
 sed -n '5,15p' file2	: to print line 5 to line 15 of a file
-
-
 
 ,     #_
    ~\_  ####_        Amazon Linux 2023
