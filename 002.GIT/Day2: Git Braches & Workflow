@@ -1,1 +1,68 @@
 
+
+
+
+HISTORY:
+    1  yum install git -y
+    2  mkdir paytm
+    3  cd paytm/
+    4  git status
+    5  git init
+    6  git branch
+    7  touch index.html
+    8  git add index.html
+    9  git commit -m "commit-1" index.html
+   10  git log
+   11  git branch
+   12  git config user.name "raham"
+   13  git config user.email "raham@gmail.com"
+   14  git branch movies
+   15  git branch
+   16  git checkout movies
+   17  git branch
+   18  touch movies{1..5}
+   19  git add movies*
+   20  git commit -m "movies commits" movies*
+   21  ll
+   22  git branch
+   23  git branch recharge
+   24  git checkout recharge
+   25  ll
+   26  touch recharge{1..5}
+   27  git add recharge*
+   28  git commit -m "recharge commits" recharge*
+   29  git branch
+   30  git checkout -b train
+   31  git branch
+   32  touch train{1..5}
+   33  git add train*
+   34  git commit -m "train commits" train*
+   35  git checkout -b dth
+   36  git branch
+   37  ll
+   38  touch dth{1..5}
+   39  git add dth*
+   40  git commit -m "dth commits" dth*
+   41  git remote add origin https://github.com/vishalreddy111/paytm.git
+   42  ll -al
+   43  git branch
+   44  git push origin master
+   45  git push origin movies
+   46  git push origin recharge
+   47  git push origin train
+   48  git push origin dth
+   49  git branch
+   50  git branch -m dth abc
+   51  git branch
+   52  git branch -m abc dth
+   53  git branch
+   54  git branch -D train
+   55  git branch
+   56  git checkout train
+   57  ll
+   58  git branch
+   59  git branch -D movies
+   60  git checkout movies
+   61  ll
+   62  history
+
