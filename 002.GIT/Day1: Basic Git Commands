@@ -8,6 +8,48 @@ Git Stages:
 Working Directory-Staging Area-Git add
 Staging Area-Repository- Git Commit
 
+Git Commands:
+HISTORY:
+    1  yum install git -y
+    2  git -v
+    3  ll
+    4  ll -a
+    5  git init
+    6  ll -a
+    7  touch file1
+    8  git status
+    9  mkdir raham
+   10  cd raham/
+   11  touch file1
+   12  git status
+   13  git init
+   14  git status
+   15  git add file1
+   16  git status
+   17  git commit -m "commit-1" file1
+   18  git status
+   19  touch file2
+   20  git status
+   21  git add file2
+   22  git status
+   23  git commit -m "commit-2" file2
+   24  touch file3
+   25  git add file3
+   26  git commit -m "commit-3" file3
+   27  touch file4
+   28  git add file4
+   29  git commit -m "commit-4" file4
+   30  git log
+   31  git log --oneline
+   32  git log --oneline -2
+   33  git log --oneline -3
+   34  mkdir abcd
+   35  cd abcd/
+   36  git status
+   37  cd
+   38  mkdir abcd
+   39  cd abcd/
+   40  git init
 
  ,     #_
    ~\_  ####_        Amazon Linux 2023
