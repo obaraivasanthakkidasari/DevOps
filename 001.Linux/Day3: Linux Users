@@ -1,0 +1,23 @@
+HARDWARE COMMANDS:
+cat - to show content in a file
+
+cat /proc/cpuinfo	: to show cpu information
+lscpu			: to show cpu information
+cat /proc/meminfo	: to show ram information
+lsmem			: to show ram information
+fdisk -l		: to show ebs information
+lsblk	
+		: to show ebs information
+free -m			: to show ram details
+yum install lshw -y	: yum: package manager install: action lshw: package
+lshw			: to show the complete info of hardware.
+
+
+
+INSTALL WEB SERVER:
+
+yum install httpd -y
+by default when we download service it will be on stopped state.
+systemctl start httpd
+systemctl status httpd
+cd /var/www/html/   --- > this path will store front-end code
