@@ -1,1 +1,50 @@
 Day4: GIT (GIT PULL, GIT Fetch, Cherry-Pick, Merge Conflict)
+
+Git Commands:
+
+git cherry-pick commit_id
+touch Karteek{1..5}
+git status
+
+vim .gitignore
+karteek*
+:wq
+
+git status
+
+
+vim index.html
+im dev-1 writing index.html on branch-1
+git add index.html
+git commit -m "dev-1 commits" index.html
+git branch -m master branch1
+
+vim index.html
+im dev-2 writing index.html on branch-2
+git add index.html
+git commit -m "dev-2 commits" index.html
+
+vim index.html
+im dev-1 writing index.html on branch-1
+new line
+git add index.html
+git commit -m "dev-1 2nd commits" index.html
+git merge branch2
+
+
+vim index.html
+git add index.html
+git commit -m "merge commits"
+
+
+GIT SHOW: 
+git show commit_id
+
+
+GIT RESTORE: 
+
+touch abcd
+git add abcd
+git status
+git restore file
+
