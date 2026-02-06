@@ -1,0 +1,606 @@
+GIT (Clone,Fork,Merge,Rebase,Revert,Rename,Stash)
+
+    1  yum install git -y
+    2  git clone repo
+    3  ll
+    4  cd d
+    5  cd paytm/
+    6  git branch
+    7  git checkout movies
+    8  git branch
+    9  ls
+   10  git checkout train
+   11  git checkout recharge
+   12  git branch
+   13  git checkout dth
+   14  git branch
+   15  ll
+   16  git checkout master
+   17  ll
+   18  git merge movies
+   19  ll
+   20  git branch
+   21  git merge recharge
+   22  ll
+   23  git rebase train
+   24  ll
+   25  git rebase dth
+   26  ll
+   27  git revert dth
+   28  ll
+   29  git revert train
+   30  ll
+   31  cd
+   32  mkdir raham
+   33  cd raham/
+   34  cd
+   35  cd paytm/
+   36  ll
+   37  touch file1 file2
+   38  git add file1 file2
+   39  git status
+   40  git stash
+   41  ll
+   42  git stash apply
+   43  ll
+   44  git status
+   45  git stash list
+   46  git stash
+   47  git stash list
+   48  git stash apply
+   49  ll
+   50  git stash list
+   51  git stash pop
+   52  git stash list
+   53  git stash clear
+   54  git stash list
+   55  git restore --staged file1
+   56  git stash list
+   57  git status
+   58  git stash
+   59  ll
+   60  git branch -D train
+   61  ll
+   62  git checkout master
+   63  ll
+   64  git pull
+   65  ll
+   66  git pull origin master
+   67  git config pull.rebase false
+   68  git pull origin master
+   69  ll
+   70  git pull origin master
+   71  git config pull.rebase true
+   72  git pull origin master
+   73  ll
+   74  cd
+   75  ll
+   76  rm -rf *
+   77  git clone Repo
+   78  cd paytm/
+   79  ll
+   80  cat index.html
+   81  git pull origin master
+   82  cat index.html
+   83  git pull origin master
+   84  ll
+   85  cat index.html
+   86  git pull origin master
+   87  history
+
+A newer release of "Amazon Linux" is available.
+  Version 2023.10.20260202:
+Run "/usr/bin/dnf check-release-update" for full release and version update info
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Thu Feb  5 18:06:41 2026 from 3.16.146.5
+[ec2-user@ip-172-31-28-21 ~]$ sudo -i
+[root@ip-172-31-28-21 ~]# ll
+total 16
+drwxr-xr-x. 3 root root 16384 Feb  5 18:30 paytm
+[root@ip-172-31-28-21 ~]# rm * -rf
+[root@ip-172-31-28-21 ~]# ll
+total 0
+[root@ip-172-31-28-21 ~]# git clone https://github.com/obaraivasanthakkidasari/paytm.git
+Cloning into 'paytm'...
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 11 (delta 4), reused 9 (delta 2), pack-reused 0 (from 0)
+Receiving objects: 100% (11/11), done.
+Resolving deltas: 100% (4/4), done.
+[root@ip-172-31-28-21 ~]# ll
+total 0
+drwxr-xr-x. 3 root root 36 Feb  6 18:22 paytm
+[root@ip-172-31-28-21 ~]# cd paytm
+[root@ip-172-31-28-21 paytm]# git branch
+* master
+[root@ip-172-31-28-21 paytm]# git checkout movies
+branch 'movies' set up to track 'origin/movies'.
+Switched to a new branch 'movies'
+[root@ip-172-31-28-21 paytm]# git branch
+  master
+* movies
+[root@ip-172-31-28-21 paytm]# git checkout train
+branch 'train' set up to track 'origin/train'.
+Switched to a new branch 'train'
+[root@ip-172-31-28-21 paytm]# git checkout dth
+branch 'dth' set up to track 'origin/dth'.
+Switched to a new branch 'dth'
+[root@ip-172-31-28-21 paytm]# git checkout recharge
+branch 'recharge' set up to track 'origin/recharge'.
+Switched to a new branch 'recharge'
+[root@ip-172-31-28-21 paytm]# git branch
+  dth
+  master
+  movies
+* recharge
+  train
+[root@ip-172-31-28-21 paytm]# git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+[root@ip-172-31-28-21 paytm]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb  6 18:22 index.html
+[root@ip-172-31-28-21 paytm]# git merge movies
+Updating 344b266..d24ee50
+Fast-forward
+ movies1 | 0
+ movies2 | 0
+ movies3 | 0
+ movies4 | 0
+ movies5 | 0
+ 5 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 movies1
+ create mode 100644 movies2
+ create mode 100644 movies3
+ create mode 100644 movies4
+ create mode 100644 movies5
+[root@ip-172-31-28-21 paytm]# git merge dth
+Updating d24ee50..94ad597
+Fast-forward
+ dth1 | 0
+ dth2 | 0
+ dth3 | 0
+ dth4 | 0
+ dth5 | 0
+ 5 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 dth1
+ create mode 100644 dth2
+ create mode 100644 dth3
+ create mode 100644 dth4
+ create mode 100644 dth5
+[root@ip-172-31-28-21 paytm]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth1
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth2
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth3
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth4
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth5
+-rw-r--r--. 1 root root 0 Feb  6 18:22 index.html
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies1
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies2
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies3
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies4
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies5
+[root@ip-172-31-28-21 paytm]# git merge train
+Updating 94ad597..6fc3964
+Fast-forward
+ train1 | 0
+ train2 | 0
+ train3 | 0
+ train4 | 0
+ train5 | 0
+ 5 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 train1
+ create mode 100644 train2
+ create mode 100644 train3
+ create mode 100644 train4
+ create mode 100644 train5
+[root@ip-172-31-28-21 paytm]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth1
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth2
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth3
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth4
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth5
+-rw-r--r--. 1 root root 0 Feb  6 18:22 index.html
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies1
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies2
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies3
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies4
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies5
+-rw-r--r--. 1 root root 0 Feb  6 18:34 train1
+-rw-r--r--. 1 root root 0 Feb  6 18:34 train2
+-rw-r--r--. 1 root root 0 Feb  6 18:34 train3
+-rw-r--r--. 1 root root 0 Feb  6 18:34 train4
+-rw-r--r--. 1 root root 0 Feb  6 18:34 train5
+[root@ip-172-31-28-21 paytm]# git rebase recharge
+Successfully rebased and updated refs/heads/master.
+[root@ip-172-31-28-21 paytm]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth1
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth2
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth3
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth4
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth5
+-rw-r--r--. 1 root root 0 Feb  6 18:22 index.html
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies1
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies2
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies3
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies4
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies5
+-rw-r--r--. 1 root root 0 Feb  6 18:35 recharge1
+-rw-r--r--. 1 root root 0 Feb  6 18:35 recharge2
+-rw-r--r--. 1 root root 0 Feb  6 18:35 recharge3
+-rw-r--r--. 1 root root 0 Feb  6 18:35 recharge4
+-rw-r--r--. 1 root root 0 Feb  6 18:35 recharge5
+-rw-r--r--. 1 root root 0 Feb  6 18:34 train1
+-rw-r--r--. 1 root root 0 Feb  6 18:34 train2
+-rw-r--r--. 1 root root 0 Feb  6 18:34 train3
+-rw-r--r--. 1 root root 0 Feb  6 18:34 train4
+-rw-r--r--. 1 root root 0 Feb  6 18:34 train5
+[root@ip-172-31-28-21 paytm]# git revert recharge
+[master 1e57b5c] Revert "dev-4"
+ Committer: root <root@ip-172-31-28-21.us-east-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 5 files changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 recharge1
+ delete mode 100644 recharge2
+ delete mode 100644 recharge3
+ delete mode 100644 recharge4
+ delete mode 100644 recharge5
+[root@ip-172-31-28-21 paytm]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth1
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth2
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth3
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth4
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth5
+-rw-r--r--. 1 root root 0 Feb  6 18:22 index.html
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies1
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies2
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies3
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies4
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies5
+-rw-r--r--. 1 root root 0 Feb  6 18:34 train1
+-rw-r--r--. 1 root root 0 Feb  6 18:34 train2
+-rw-r--r--. 1 root root 0 Feb  6 18:34 train3
+-rw-r--r--. 1 root root 0 Feb  6 18:34 train4
+-rw-r--r--. 1 root root 0 Feb  6 18:34 train5
+[root@ip-172-31-28-21 paytm]# git branch
+  dth
+* master
+  movies
+  recharge
+  train
+[root@ip-172-31-28-21 paytm]# git revert train
+[master 95bb5ec] Revert "dev-3"
+ Committer: root <root@ip-172-31-28-21.us-east-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 5 files changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 train1
+ delete mode 100644 train2
+ delete mode 100644 train3
+ delete mode 100644 train4
+ delete mode 100644 train5
+[root@ip-172-31-28-21 paytm]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth1
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth2
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth3
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth4
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth5
+-rw-r--r--. 1 root root 0 Feb  6 18:22 index.html
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies1
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies2
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies3
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies4
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies5
+[root@ip-172-31-28-21 paytm]# git branch
+  dth
+* master
+  movies
+  recharge
+  train
+[root@ip-172-31-28-21 paytm]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth1
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth2
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth3
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth4
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth5
+-rw-r--r--. 1 root root 0 Feb  6 18:22 index.html
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies1
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies2
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies3
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies4
+-rw-r--r--. 1 root root 0 Feb  6 18:34 movies5
+[root@ip-172-31-28-21 paytm]# git revert movies
+[master cd370eb] Revert "dev-1"
+ Committer: root <root@ip-172-31-28-21.us-east-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 5 files changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 movies1
+ delete mode 100644 movies2
+ delete mode 100644 movies3
+ delete mode 100644 movies4
+ delete mode 100644 movies5
+[root@ip-172-31-28-21 paytm]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth1
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth2
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth3
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth4
+-rw-r--r--. 1 root root 0 Feb  6 18:34 dth5
+-rw-r--r--. 1 root root 0 Feb  6 18:22 index.html
+[root@ip-172-31-28-21 paytm]# git revert dth
+[master 1707dd2] Revert "dev-2"
+ Committer: root <root@ip-172-31-28-21.us-east-2.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 5 files changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 dth1
+ delete mode 100644 dth2
+ delete mode 100644 dth3
+ delete mode 100644 dth4
+ delete mode 100644 dth5
+[root@ip-172-31-28-21 paytm]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb  6 18:22 index.html
+[root@ip-172-31-28-21 paytm]# git branch
+  dth
+* master
+  movies
+  recharge
+  train
+[root@ip-172-31-28-21 paytm]# git branch -m dth abc
+[root@ip-172-31-28-21 paytm]# git branch
+  abc
+* master
+  movies
+  recharge
+  train
+[root@ip-172-31-28-21 paytm]# git branch -m abc karteek
+[root@ip-172-31-28-21 paytm]# git branch
+  karteek
+* master
+  movies
+  recharge
+  train
+[root@ip-172-31-28-21 paytm]# git branch -m karteek dth
+[root@ip-172-31-28-21 paytm]# git branch
+  dth
+* master
+  movies
+  recharge
+  train
+[root@ip-172-31-28-21 paytm]# git branch -d train
+Deleted branch train (was 6fc3964).
+[root@ip-172-31-28-21 paytm]# git branch
+  dth
+* master
+  movies
+  recharge
+[root@ip-172-31-28-21 paytm]# git restore train
+error: pathspec 'train' did not match any file(s) known to git
+[root@ip-172-31-28-21 paytm]# git branch restore train
+fatal: not a valid object name: 'train'
+[root@ip-172-31-28-21 paytm]# git checkout train
+branch 'train' set up to track 'origin/train'.
+Switched to a new branch 'train'
+[root@ip-172-31-28-21 paytm]# 
+[root@ip-172-31-28-21 paytm]# git branch
+  dth
+  master
+  movies
+  recharge
+* train
+[root@ip-172-31-28-21 paytm]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb  6 18:59 dth1
+-rw-r--r--. 1 root root 0 Feb  6 18:59 dth2
+-rw-r--r--. 1 root root 0 Feb  6 18:59 dth3
+-rw-r--r--. 1 root root 0 Feb  6 18:59 dth4
+-rw-r--r--. 1 root root 0 Feb  6 18:59 dth5
+-rw-r--r--. 1 root root 0 Feb  6 18:22 index.html
+-rw-r--r--. 1 root root 0 Feb  6 18:59 movies1
+-rw-r--r--. 1 root root 0 Feb  6 18:59 movies2
+-rw-r--r--. 1 root root 0 Feb  6 18:59 movies3
+-rw-r--r--. 1 root root 0 Feb  6 18:59 movies4
+-rw-r--r--. 1 root root 0 Feb  6 18:59 movies5
+-rw-r--r--. 1 root root 0 Feb  6 18:59 train1
+-rw-r--r--. 1 root root 0 Feb  6 18:59 train2
+-rw-r--r--. 1 root root 0 Feb  6 18:59 train3
+-rw-r--r--. 1 root root 0 Feb  6 18:59 train4
+-rw-r--r--. 1 root root 0 Feb  6 18:59 train5
+[root@ip-172-31-28-21 paytm]# git branch
+  dth
+  master
+  movies
+  recharge
+* train
+[root@ip-172-31-28-21 paytm]# git branch -d train
+error: cannot delete branch 'train' used by worktree at '/root/paytm'
+[root@ip-172-31-28-21 paytm]# git status
+On branch train
+Your branch is up to date with 'origin/train'.
+
+nothing to commit, working tree clean
+[root@ip-172-31-28-21 paytm]# touch kar1 kar2
+[root@ip-172-31-28-21 paytm]# git add kar1 kar2
+[root@ip-172-31-28-21 paytm]# git status
+On branch train
+Your branch is up to date with 'origin/train'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   kar1
+        new file:   kar2
+
+[root@ip-172-31-28-21 paytm]# git status
+On branch train
+Your branch is up to date with 'origin/train'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   kar1
+        new file:   kar2
+
+[root@ip-172-31-28-21 paytm]# git stash
+Saved working directory and index state WIP on train: 6fc3964 dev-3
+[root@ip-172-31-28-21 paytm]# git status
+On branch train
+Your branch is up to date with 'origin/train'.
+
+nothing to commit, working tree clean
+[root@ip-172-31-28-21 paytm]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb  6 18:59 dth1
+-rw-r--r--. 1 root root 0 Feb  6 18:59 dth2
+-rw-r--r--. 1 root root 0 Feb  6 18:59 dth3
+-rw-r--r--. 1 root root 0 Feb  6 18:59 dth4
+-rw-r--r--. 1 root root 0 Feb  6 18:59 dth5
+-rw-r--r--. 1 root root 0 Feb  6 18:22 index.html
+-rw-r--r--. 1 root root 0 Feb  6 18:59 movies1
+-rw-r--r--. 1 root root 0 Feb  6 18:59 movies2
+-rw-r--r--. 1 root root 0 Feb  6 18:59 movies3
+-rw-r--r--. 1 root root 0 Feb  6 18:59 movies4
+-rw-r--r--. 1 root root 0 Feb  6 18:59 movies5
+-rw-r--r--. 1 root root 0 Feb  6 18:59 train1
+-rw-r--r--. 1 root root 0 Feb  6 18:59 train2
+-rw-r--r--. 1 root root 0 Feb  6 18:59 train3
+-rw-r--r--. 1 root root 0 Feb  6 18:59 train4
+-rw-r--r--. 1 root root 0 Feb  6 18:59 train5
+[root@ip-172-31-28-21 paytm]# git stash list
+stash@{0}: WIP on train: 6fc3964 dev-3
+[root@ip-172-31-28-21 paytm]# git stash apply
+On branch train
+Your branch is up to date with 'origin/train'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   kar1
+        new file:   kar2
+
+[root@ip-172-31-28-21 paytm]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb  6 18:59 dth1
+-rw-r--r--. 1 root root 0 Feb  6 18:59 dth2
+-rw-r--r--. 1 root root 0 Feb  6 18:59 dth3
+-rw-r--r--. 1 root root 0 Feb  6 18:59 dth4
+-rw-r--r--. 1 root root 0 Feb  6 18:59 dth5
+-rw-r--r--. 1 root root 0 Feb  6 18:22 index.html
+-rw-r--r--. 1 root root 0 Feb  6 19:06 kar1
+-rw-r--r--. 1 root root 0 Feb  6 19:06 kar2
+-rw-r--r--. 1 root root 0 Feb  6 18:59 movies1
+-rw-r--r--. 1 root root 0 Feb  6 18:59 movies2
+-rw-r--r--. 1 root root 0 Feb  6 18:59 movies3
+-rw-r--r--. 1 root root 0 Feb  6 18:59 movies4
+-rw-r--r--. 1 root root 0 Feb  6 18:59 movies5
+-rw-r--r--. 1 root root 0 Feb  6 18:59 train1
+-rw-r--r--. 1 root root 0 Feb  6 18:59 train2
+-rw-r--r--. 1 root root 0 Feb  6 18:59 train3
+-rw-r--r--. 1 root root 0 Feb  6 18:59 train4
+-rw-r--r--. 1 root root 0 Feb  6 18:59 train5
+[root@ip-172-31-28-21 paytm]# git stash
+Saved working directory and index state WIP on train: 6fc3964 dev-3
+[root@ip-172-31-28-21 paytm]# git stash list
+stash@{0}: WIP on train: 6fc3964 dev-3
+stash@{1}: WIP on train: 6fc3964 dev-3
+[root@ip-172-31-28-21 paytm]# git stash apply
+On branch train
+Your branch is up to date with 'origin/train'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   kar1
+        new file:   kar2
+
+[root@ip-172-31-28-21 paytm]# ll
+total 0
+-rw-r--r--. 1 root root 0 Feb  6 18:59 dth1
+-rw-r--r--. 1 root root 0 Feb  6 18:59 dth2
+-rw-r--r--. 1 root root 0 Feb  6 18:59 dth3
+-rw-r--r--. 1 root root 0 Feb  6 18:59 dth4
+-rw-r--r--. 1 root root 0 Feb  6 18:59 dth5
+-rw-r--r--. 1 root root 0 Feb  6 18:22 index.html
+-rw-r--r--. 1 root root 0 Feb  6 19:07 kar1
+-rw-r--r--. 1 root root 0 Feb  6 19:07 kar2
+-rw-r--r--. 1 root root 0 Feb  6 18:59 movies1
+-rw-r--r--. 1 root root 0 Feb  6 18:59 movies2
+-rw-r--r--. 1 root root 0 Feb  6 18:59 movies3
+-rw-r--r--. 1 root root 0 Feb  6 18:59 movies4
+-rw-r--r--. 1 root root 0 Feb  6 18:59 movies5
+-rw-r--r--. 1 root root 0 Feb  6 18:59 train1
+-rw-r--r--. 1 root root 0 Feb  6 18:59 train2
+-rw-r--r--. 1 root root 0 Feb  6 18:59 train3
+-rw-r--r--. 1 root root 0 Feb  6 18:59 train4
+-rw-r--r--. 1 root root 0 Feb  6 18:59 train5
+[root@ip-172-31-28-21 paytm]# git stash list
+stash@{0}: WIP on train: 6fc3964 dev-3
+stash@{1}: WIP on train: 6fc3964 dev-3
+[root@ip-172-31-28-21 paytm]# git stash pop
+On branch train
+Your branch is up to date with 'origin/train'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   kar1
+        new file:   kar2
+
+Dropped refs/stash@{0} (a2fca342978b87227b38f32358d035bd19c385d8)
+[root@ip-172-31-28-21 paytm]# git stash clear
+[root@ip-172-31-28-21 paytm]# git stash list
+[root@ip-172-31-28-21 paytm]# 
