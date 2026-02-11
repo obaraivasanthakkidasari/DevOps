@@ -1,1 +1,27 @@
 Day 2: Jenkins Variables
+HISTORY:
+    1  vim jenkins.sh
+    2  sh jenkins.sh
+    3  cat /var/lib/jenkins/secrets/initialAdminPassword
+    4  cd /var/lib/jenkins/workspace/abcd/
+    5  ll
+    6  ll target/
+    7  echo "my name is raham, raham is working on tcs and raham is teaching devops"
+    8  echo "hai"
+    9  cd
+   10  find / -name jenkins.service
+   11  find / -name .java
+   12  find / -name jenkins.service
+   13  vim /usr/lib/systemd/system/jenkins.service
+   14  systemctl daemon-reload
+   15  systemctl restart jenkins.service
+   16  find / -name jenkins.service
+   17  vim /usr/lib/systemd/system/jenkins.service
+   18  systemctl daemon-reload
+   19  systemctl restart jenkins.service
+   20  vim /var/lib/jenkins/config.xml
+   21  systemctl restart jenkins.service
+   22  systemctl status jenkins.service
+   23  systemctl start jenkins.service
+   24  systemctl status jenkins.service
+   25  history
