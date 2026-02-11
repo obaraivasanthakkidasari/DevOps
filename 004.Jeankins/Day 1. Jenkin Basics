@@ -1,1 +1,64 @@
-
+Day 1. Jenkin Basics
+HISTORY:
+ 1  yum install git java-1.8.0-openjdk maven -y
+    2  sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+    3    sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+    4
+    5  amazon-linux-extras install java-openjdk  -y
+    6  amazon-linux-extras install java-openjdk11  -y
+    7  yum install jenkins -y
+    8  java -version
+    9  update-alternatives --config java
+   10  java -version
+   11  systemcl start jenkins
+   12  systemctl start jenkins
+   13  systemctl status jenkins
+   14  cat /var/lib/jenkins/secrets/initialAdminPassword
+   15  cd /var/lib/jenkins/
+   16  ll
+   17  cd workspace/
+   18  ll
+   19  cd RAHAM/
+   20  ll
+   21  ll target/
+   22  cd
+   23  cd /var/lib/jenkins/workspace/abcd/
+   24  ll
+   25  ll target/
+   26  mvn -v
+   27  java -version
+   28  cd
+   29  ll
+   30  mkdir raham
+   31  cd raham/
+   32  ll
+   33  pwd
+   34  cd /
+   35  ll
+   36  chown jenkins:jenkins /root/
+   37  ll
+   38  cd /root/
+   39  ll
+   40  chown jenkins:jenkins raham/
+   41  ll
+   42  cd raham/
+   43  ll
+   44  cd
+   45  mkdir swiggy
+   46  cd swiggy/
+   47  pwd
+   48  chown jenkins:jenkins /root/
+   49  chown jenkins:jenkins /root/swiggy
+   50  cd
+   51  ll
+   52  cd swiggy/
+   53  ll
+   54  cd
+   55  yum remove maven java* -y
+   56  yum install maven -y
+   57  mvn -v
+   58  cd swiggy/
+   59  mvn compile
+   60  mvn -v
+   61  ll
+   62  history
