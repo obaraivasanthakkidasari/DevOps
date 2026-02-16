@@ -1,0 +1,1064 @@
+
+  2026-02-16   13:37.02   /home/mobaxterm/desktop  ssh -i "6PMJANONE.pem" ec2-user@ec2-13-58-180-62.us-east-2.compute.amazonaws.com
+X11 forwarding request failed on channel 0
+
+A newer release of "Amazon Linux" is available.
+  Version 2023.10.20260202:
+Run "/usr/bin/dnf check-release-update" for full release and version update info
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Mon Feb 16 19:31:31 2026 from 76.39.96.58
+[ec2-user@ip-172-31-23-165 ~]$ SUDO -I
+-bash: SUDO: command not found
+[ec2-user@ip-172-31-23-165 ~]$ sudo -i
+[root@ip-172-31-23-165 ~]# java -version
+openjdk version "21.0.10" 2026-01-20 LTS
+OpenJDK Runtime Environment Corretto-21.0.10.7.1 (build 21.0.10+7-LTS)
+OpenJDK 64-Bit Server VM Corretto-21.0.10.7.1 (build 21.0.10+7-LTS, mixed mode, sharing)
+[root@ip-172-31-23-165 ~]# amazon-linux-extras install java-openjdk11 -y
+-bash: amazon-linux-extras: command not found
+[root@ip-172-31-23-165 ~]# amazon-linux-extras install java-openjdk11 -y
+-bash: amazon-linux-extras: command not found
+[root@ip-172-31-23-165 ~]#
+[root@ip-172-31-23-165 ~]# sudo dnf install java-11-amazon-corretto -y
+Last metadata expiration check: 0:10:18 ago on Mon Feb 16 19:30:13 2026.
+Package java-11-amazon-corretto-1:11.0.29+7-1.amzn2023.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[root@ip-172-31-23-165 ~]# java -version
+openjdk version "21.0.10" 2026-01-20 LTS
+OpenJDK Runtime Environment Corretto-21.0.10.7.1 (build 21.0.10+7-LTS)
+OpenJDK 64-Bit Server VM Corretto-21.0.10.7.1 (build 21.0.10+7-LTS, mixed mode, sharing)
+[root@ip-172-31-23-165 ~]# sudo dnf install java-11-amazon-corretto -y
+Last metadata expiration check: 0:11:06 ago on Mon Feb 16 19:30:13 2026.
+Package java-11-amazon-corretto-1:11.0.29+7-1.amzn2023.x86_64 is already installed.
+Dependencies resolved.
+Nothing to do.
+Complete!
+[root@ip-172-31-23-165 ~]# java -version
+openjdk version "21.0.10" 2026-01-20 LTS
+OpenJDK Runtime Environment Corretto-21.0.10.7.1 (build 21.0.10+7-LTS)
+OpenJDK 64-Bit Server VM Corretto-21.0.10.7.1 (build 21.0.10+7-LTS, mixed mode, sharing)
+[root@ip-172-31-23-165 ~]#
+[root@ip-172-31-23-165 ~]# sudo alternatives --config java
+
+There are 5 programs which provide 'java'.
+
+  Selection    Command
+-----------------------------------------------
+   1           /usr/lib/jvm/java-17-amazon-corretto.x86_64/bin/java
+   2           /usr/lib/jvm/java-1.8.0-amazon-corretto.x86_64/jre/bin/java
+   3           /usr/lib/jvm/java-11-amazon-corretto.x86_64/bin/java
+*  4           /usr/lib/jvm/java-21-amazon-corretto.x86_64/bin/java
+ + 5           /usr/lib/jvm/java-21-amazon-corretto/bin/java
+
+Enter to keep the current selection[+], or type selection number: 3
+[root@ip-172-31-23-165 ~]# java -version
+openjdk version "11.0.29" 2025-10-21 LTS
+OpenJDK Runtime Environment Corretto-11.0.29.7.1 (build 11.0.29+7-LTS)
+OpenJDK 64-Bit Server VM Corretto-11.0.29.7.1 (build 11.0.29+7-LTS, mixed mode)
+[root@ip-172-31-23-165 ~]# wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.115/bin/apache-tomcat-9.0.115.tar.gz
+--2026-02-16 19:46:22--  https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.115/bin/apache-tomcat-9.0.115.tar.gz
+Resolving dlcdn.apache.org (dlcdn.apache.org)... 151.101.2.132, 2a04:4e42::644
+Connecting to dlcdn.apache.org (dlcdn.apache.org)|151.101.2.132|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 13072656 (12M) [application/x-gzip]
+Saving to: ‘apache-tomcat-9.0.115.tar.gz’
+
+apache-tomcat-9.0.115.tar.gz           100%[==========================================================================>]  12.47M  --.-KB/s    in 0.04s
+
+2026-02-16 19:46:23 (318 MB/s) - ‘apache-tomcat-9.0.115.tar.gz’ saved [13072656/13072656]
+
+[root@ip-172-31-23-165 ~]# ll
+total 12772
+-rw-r--r--. 1 root root 13072656 Jan 21 08:47 apache-tomcat-9.0.115.tar.gz
+-rw-r--r--. 1 root root      838 Feb 14 05:28 nexus.sh
+[root@ip-172-31-23-165 ~]# tar -zxvf apache-tomcat-9.0.115.tar.gz
+apache-tomcat-9.0.115/conf/
+apache-tomcat-9.0.115/conf/catalina.policy
+apache-tomcat-9.0.115/conf/catalina.properties
+apache-tomcat-9.0.115/conf/context.xml
+apache-tomcat-9.0.115/conf/jaspic-providers.xml
+apache-tomcat-9.0.115/conf/jaspic-providers.xsd
+apache-tomcat-9.0.115/conf/logging.properties
+apache-tomcat-9.0.115/conf/server.xml
+apache-tomcat-9.0.115/conf/tomcat-users.xml
+apache-tomcat-9.0.115/conf/tomcat-users.xsd
+apache-tomcat-9.0.115/conf/web.xml
+apache-tomcat-9.0.115/bin/
+apache-tomcat-9.0.115/lib/
+apache-tomcat-9.0.115/logs/
+apache-tomcat-9.0.115/temp/
+apache-tomcat-9.0.115/webapps/
+apache-tomcat-9.0.115/webapps/ROOT/
+apache-tomcat-9.0.115/webapps/ROOT/WEB-INF/
+apache-tomcat-9.0.115/webapps/docs/
+apache-tomcat-9.0.115/webapps/docs/META-INF/
+apache-tomcat-9.0.115/webapps/docs/WEB-INF/
+apache-tomcat-9.0.115/webapps/docs/WEB-INF/jsp/
+apache-tomcat-9.0.115/webapps/docs/annotationapi/
+apache-tomcat-9.0.115/webapps/docs/api/
+apache-tomcat-9.0.115/webapps/docs/appdev/
+apache-tomcat-9.0.115/webapps/docs/appdev/sample/
+apache-tomcat-9.0.115/webapps/docs/appdev/sample/docs/
+apache-tomcat-9.0.115/webapps/docs/appdev/sample/src/
+apache-tomcat-9.0.115/webapps/docs/appdev/sample/src/mypackage/
+apache-tomcat-9.0.115/webapps/docs/appdev/sample/web/
+apache-tomcat-9.0.115/webapps/docs/appdev/sample/web/WEB-INF/
+apache-tomcat-9.0.115/webapps/docs/appdev/sample/web/images/
+apache-tomcat-9.0.115/webapps/docs/architecture/
+apache-tomcat-9.0.115/webapps/docs/architecture/requestProcess/
+apache-tomcat-9.0.115/webapps/docs/architecture/startup/
+apache-tomcat-9.0.115/webapps/docs/config/
+apache-tomcat-9.0.115/webapps/docs/elapi/
+apache-tomcat-9.0.115/webapps/docs/images/
+apache-tomcat-9.0.115/webapps/docs/images/fonts/
+apache-tomcat-9.0.115/webapps/docs/jaspicapi/
+apache-tomcat-9.0.115/webapps/docs/jspapi/
+apache-tomcat-9.0.115/webapps/docs/servletapi/
+apache-tomcat-9.0.115/webapps/docs/tribes/
+apache-tomcat-9.0.115/webapps/docs/websocketapi/
+apache-tomcat-9.0.115/webapps/examples/
+apache-tomcat-9.0.115/webapps/examples/META-INF/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/async/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/checkbox/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/colors/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/compressionFilters/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/dates/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/error/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/examples/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/filters/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/http2/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/el/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/listeners/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/nonblocking/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/num/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/sessions/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/trailers/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/util/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/validators/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/chat/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/echo/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/snake/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/jsp/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/lib/
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/tags/
+apache-tomcat-9.0.115/webapps/examples/jsp/
+apache-tomcat-9.0.115/webapps/examples/jsp/async/
+apache-tomcat-9.0.115/webapps/examples/jsp/checkbox/
+apache-tomcat-9.0.115/webapps/examples/jsp/colors/
+apache-tomcat-9.0.115/webapps/examples/jsp/dates/
+apache-tomcat-9.0.115/webapps/examples/jsp/error/
+apache-tomcat-9.0.115/webapps/examples/jsp/forward/
+apache-tomcat-9.0.115/webapps/examples/jsp/images/
+apache-tomcat-9.0.115/webapps/examples/jsp/include/
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/el/
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/jspattribute/
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/jspx/
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/misc/
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/simpletag/
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/tagfiles/
+apache-tomcat-9.0.115/webapps/examples/jsp/jsptoserv/
+apache-tomcat-9.0.115/webapps/examples/jsp/num/
+apache-tomcat-9.0.115/webapps/examples/jsp/security/
+apache-tomcat-9.0.115/webapps/examples/jsp/security/protected/
+apache-tomcat-9.0.115/webapps/examples/jsp/sessions/
+apache-tomcat-9.0.115/webapps/examples/jsp/simpletag/
+apache-tomcat-9.0.115/webapps/examples/jsp/snp/
+apache-tomcat-9.0.115/webapps/examples/jsp/tagplugin/
+apache-tomcat-9.0.115/webapps/examples/jsp/xml/
+apache-tomcat-9.0.115/webapps/examples/servlets/
+apache-tomcat-9.0.115/webapps/examples/servlets/images/
+apache-tomcat-9.0.115/webapps/examples/servlets/nonblocking/
+apache-tomcat-9.0.115/webapps/examples/websocket/
+apache-tomcat-9.0.115/webapps/host-manager/
+apache-tomcat-9.0.115/webapps/host-manager/META-INF/
+apache-tomcat-9.0.115/webapps/host-manager/WEB-INF/
+apache-tomcat-9.0.115/webapps/host-manager/WEB-INF/jsp/
+apache-tomcat-9.0.115/webapps/host-manager/css/
+apache-tomcat-9.0.115/webapps/host-manager/images/
+apache-tomcat-9.0.115/webapps/manager/
+apache-tomcat-9.0.115/webapps/manager/META-INF/
+apache-tomcat-9.0.115/webapps/manager/WEB-INF/
+apache-tomcat-9.0.115/webapps/manager/WEB-INF/jsp/
+apache-tomcat-9.0.115/webapps/manager/css/
+apache-tomcat-9.0.115/webapps/manager/images/
+apache-tomcat-9.0.115/work/
+apache-tomcat-9.0.115/BUILDING.txt
+apache-tomcat-9.0.115/CONTRIBUTING.md
+apache-tomcat-9.0.115/LICENSE
+apache-tomcat-9.0.115/NOTICE
+apache-tomcat-9.0.115/README.md
+apache-tomcat-9.0.115/RELEASE-NOTES
+apache-tomcat-9.0.115/RUNNING.txt
+apache-tomcat-9.0.115/bin/bootstrap.jar
+apache-tomcat-9.0.115/bin/catalina-tasks.xml
+apache-tomcat-9.0.115/bin/catalina.bat
+apache-tomcat-9.0.115/bin/ciphers.bat
+apache-tomcat-9.0.115/bin/commons-daemon-native.tar.gz
+apache-tomcat-9.0.115/bin/commons-daemon.jar
+apache-tomcat-9.0.115/bin/configtest.bat
+apache-tomcat-9.0.115/bin/digest.bat
+apache-tomcat-9.0.115/bin/makebase.bat
+apache-tomcat-9.0.115/bin/setclasspath.bat
+apache-tomcat-9.0.115/bin/shutdown.bat
+apache-tomcat-9.0.115/bin/startup.bat
+apache-tomcat-9.0.115/bin/tomcat-juli.jar
+apache-tomcat-9.0.115/bin/tomcat-native.tar.gz
+apache-tomcat-9.0.115/bin/tool-wrapper.bat
+apache-tomcat-9.0.115/bin/version.bat
+apache-tomcat-9.0.115/lib/annotations-api.jar
+apache-tomcat-9.0.115/lib/catalina-ant.jar
+apache-tomcat-9.0.115/lib/catalina-ha.jar
+apache-tomcat-9.0.115/lib/catalina-ssi.jar
+apache-tomcat-9.0.115/lib/catalina-storeconfig.jar
+apache-tomcat-9.0.115/lib/catalina-tribes.jar
+apache-tomcat-9.0.115/lib/catalina.jar
+apache-tomcat-9.0.115/lib/ecj-4.20.jar
+apache-tomcat-9.0.115/lib/el-api.jar
+apache-tomcat-9.0.115/lib/jasper-el.jar
+apache-tomcat-9.0.115/lib/jasper.jar
+apache-tomcat-9.0.115/lib/jaspic-api.jar
+apache-tomcat-9.0.115/lib/jsp-api.jar
+apache-tomcat-9.0.115/lib/servlet-api.jar
+apache-tomcat-9.0.115/lib/tomcat-api.jar
+apache-tomcat-9.0.115/lib/tomcat-coyote-ffm.jar
+apache-tomcat-9.0.115/lib/tomcat-coyote.jar
+apache-tomcat-9.0.115/lib/tomcat-dbcp.jar
+apache-tomcat-9.0.115/lib/tomcat-i18n-cs.jar
+apache-tomcat-9.0.115/lib/tomcat-i18n-de.jar
+apache-tomcat-9.0.115/lib/tomcat-i18n-es.jar
+apache-tomcat-9.0.115/lib/tomcat-i18n-fr.jar
+apache-tomcat-9.0.115/lib/tomcat-i18n-ja.jar
+apache-tomcat-9.0.115/lib/tomcat-i18n-ko.jar
+apache-tomcat-9.0.115/lib/tomcat-i18n-pt-BR.jar
+apache-tomcat-9.0.115/lib/tomcat-i18n-ru.jar
+apache-tomcat-9.0.115/lib/tomcat-i18n-zh-CN.jar
+apache-tomcat-9.0.115/lib/tomcat-jdbc.jar
+apache-tomcat-9.0.115/lib/tomcat-jni.jar
+apache-tomcat-9.0.115/lib/tomcat-util-scan.jar
+apache-tomcat-9.0.115/lib/tomcat-util.jar
+apache-tomcat-9.0.115/lib/tomcat-websocket.jar
+apache-tomcat-9.0.115/lib/websocket-api.jar
+apache-tomcat-9.0.115/temp/safeToDelete.tmp
+apache-tomcat-9.0.115/webapps/ROOT/RELEASE-NOTES.txt
+apache-tomcat-9.0.115/webapps/ROOT/WEB-INF/web.xml
+apache-tomcat-9.0.115/webapps/ROOT/asf-logo-wide.svg
+apache-tomcat-9.0.115/webapps/ROOT/bg-button.png
+apache-tomcat-9.0.115/webapps/ROOT/bg-middle.png
+apache-tomcat-9.0.115/webapps/ROOT/bg-nav.png
+apache-tomcat-9.0.115/webapps/ROOT/bg-upper.png
+apache-tomcat-9.0.115/webapps/ROOT/favicon.ico
+apache-tomcat-9.0.115/webapps/ROOT/index.jsp
+apache-tomcat-9.0.115/webapps/ROOT/tomcat.css
+apache-tomcat-9.0.115/webapps/ROOT/tomcat.svg
+apache-tomcat-9.0.115/webapps/docs/BUILDING.txt
+apache-tomcat-9.0.115/webapps/docs/META-INF/context.xml
+apache-tomcat-9.0.115/webapps/docs/RELEASE-NOTES.txt
+apache-tomcat-9.0.115/webapps/docs/RUNNING.txt
+apache-tomcat-9.0.115/webapps/docs/WEB-INF/jsp/403.jsp
+apache-tomcat-9.0.115/webapps/docs/WEB-INF/web.xml
+apache-tomcat-9.0.115/webapps/docs/aio.html
+apache-tomcat-9.0.115/webapps/docs/annotationapi/index.html
+apache-tomcat-9.0.115/webapps/docs/api/index.html
+apache-tomcat-9.0.115/webapps/docs/appdev/build.xml.txt
+apache-tomcat-9.0.115/webapps/docs/appdev/deployment.html
+apache-tomcat-9.0.115/webapps/docs/appdev/index.html
+apache-tomcat-9.0.115/webapps/docs/appdev/installation.html
+apache-tomcat-9.0.115/webapps/docs/appdev/introduction.html
+apache-tomcat-9.0.115/webapps/docs/appdev/processes.html
+apache-tomcat-9.0.115/webapps/docs/appdev/sample/build.xml
+apache-tomcat-9.0.115/webapps/docs/appdev/sample/docs/README.txt
+apache-tomcat-9.0.115/webapps/docs/appdev/sample/index.html
+apache-tomcat-9.0.115/webapps/docs/appdev/sample/sample.war
+apache-tomcat-9.0.115/webapps/docs/appdev/sample/src/mypackage/Hello.java
+apache-tomcat-9.0.115/webapps/docs/appdev/sample/web/WEB-INF/web.xml
+apache-tomcat-9.0.115/webapps/docs/appdev/sample/web/hello.jsp
+apache-tomcat-9.0.115/webapps/docs/appdev/sample/web/images/tomcat.gif
+apache-tomcat-9.0.115/webapps/docs/appdev/sample/web/index.html
+apache-tomcat-9.0.115/webapps/docs/appdev/source.html
+apache-tomcat-9.0.115/webapps/docs/appdev/web.xml.txt
+apache-tomcat-9.0.115/webapps/docs/apr.html
+apache-tomcat-9.0.115/webapps/docs/architecture/index.html
+apache-tomcat-9.0.115/webapps/docs/architecture/overview.html
+apache-tomcat-9.0.115/webapps/docs/architecture/requestProcess.html
+apache-tomcat-9.0.115/webapps/docs/architecture/requestProcess/11_nio.plantuml
+apache-tomcat-9.0.115/webapps/docs/architecture/requestProcess/11_nio.png
+apache-tomcat-9.0.115/webapps/docs/architecture/requestProcess/21_http11.plantuml
+apache-tomcat-9.0.115/webapps/docs/architecture/requestProcess/21_http11.png
+apache-tomcat-9.0.115/webapps/docs/architecture/requestProcess/31_synchronous.plantuml
+apache-tomcat-9.0.115/webapps/docs/architecture/requestProcess/31_synchronous.png
+apache-tomcat-9.0.115/webapps/docs/architecture/requestProcess/41_basic.plantuml
+apache-tomcat-9.0.115/webapps/docs/architecture/requestProcess/41_basic.png
+apache-tomcat-9.0.115/webapps/docs/architecture/startup.html
+apache-tomcat-9.0.115/webapps/docs/architecture/startup/1_overview.plantuml
+apache-tomcat-9.0.115/webapps/docs/architecture/startup/1_overview.png
+apache-tomcat-9.0.115/webapps/docs/architecture/startup/2_catalina_init.plantuml
+apache-tomcat-9.0.115/webapps/docs/architecture/startup/2_catalina_init.png
+apache-tomcat-9.0.115/webapps/docs/architecture/startup/3_catalina_start_1.plantuml
+apache-tomcat-9.0.115/webapps/docs/architecture/startup/3_catalina_start_1.png
+apache-tomcat-9.0.115/webapps/docs/architecture/startup/4_catalina_start_2.plantuml
+apache-tomcat-9.0.115/webapps/docs/architecture/startup/4_catalina_start_2.png
+apache-tomcat-9.0.115/webapps/docs/architecture/startup/5_catalina_start_3.plantuml
+apache-tomcat-9.0.115/webapps/docs/architecture/startup/5_catalina_start_3.png
+apache-tomcat-9.0.115/webapps/docs/architecture/startup/6_catalina_host_config.plantuml
+apache-tomcat-9.0.115/webapps/docs/architecture/startup/6_catalina_host_config.png
+apache-tomcat-9.0.115/webapps/docs/architecture/startup/7_catalina_context_config.plantuml
+apache-tomcat-9.0.115/webapps/docs/architecture/startup/7_catalina_context_config.png
+apache-tomcat-9.0.115/webapps/docs/architecture/startup/serverStartup.txt
+apache-tomcat-9.0.115/webapps/docs/balancer-howto.html
+apache-tomcat-9.0.115/webapps/docs/building.html
+apache-tomcat-9.0.115/webapps/docs/cdi.html
+apache-tomcat-9.0.115/webapps/docs/cgi-howto.html
+apache-tomcat-9.0.115/webapps/docs/changelog.html
+apache-tomcat-9.0.115/webapps/docs/class-loader-howto.html
+apache-tomcat-9.0.115/webapps/docs/cluster-howto.html
+apache-tomcat-9.0.115/webapps/docs/comments.html
+apache-tomcat-9.0.115/webapps/docs/config/ajp.html
+apache-tomcat-9.0.115/webapps/docs/config/automatic-deployment.html
+apache-tomcat-9.0.115/webapps/docs/config/cluster-channel.html
+apache-tomcat-9.0.115/webapps/docs/config/cluster-deployer.html
+apache-tomcat-9.0.115/webapps/docs/config/cluster-interceptor.html
+apache-tomcat-9.0.115/webapps/docs/config/cluster-listener.html
+apache-tomcat-9.0.115/webapps/docs/config/cluster-manager.html
+apache-tomcat-9.0.115/webapps/docs/config/cluster-membership.html
+apache-tomcat-9.0.115/webapps/docs/config/cluster-receiver.html
+apache-tomcat-9.0.115/webapps/docs/config/cluster-sender.html
+apache-tomcat-9.0.115/webapps/docs/config/cluster-valve.html
+apache-tomcat-9.0.115/webapps/docs/config/cluster.html
+apache-tomcat-9.0.115/webapps/docs/config/context.html
+apache-tomcat-9.0.115/webapps/docs/config/cookie-processor.html
+apache-tomcat-9.0.115/webapps/docs/config/credentialhandler.html
+apache-tomcat-9.0.115/webapps/docs/config/engine.html
+apache-tomcat-9.0.115/webapps/docs/config/executor.html
+apache-tomcat-9.0.115/webapps/docs/config/filter.html
+apache-tomcat-9.0.115/webapps/docs/config/globalresources.html
+apache-tomcat-9.0.115/webapps/docs/config/host.html
+apache-tomcat-9.0.115/webapps/docs/config/http.html
+apache-tomcat-9.0.115/webapps/docs/config/http2.html
+apache-tomcat-9.0.115/webapps/docs/config/index.html
+apache-tomcat-9.0.115/webapps/docs/config/jar-scan-filter.html
+apache-tomcat-9.0.115/webapps/docs/config/jar-scanner.html
+apache-tomcat-9.0.115/webapps/docs/config/jaspic.html
+apache-tomcat-9.0.115/webapps/docs/config/listeners.html
+apache-tomcat-9.0.115/webapps/docs/config/loader.html
+apache-tomcat-9.0.115/webapps/docs/config/manager.html
+apache-tomcat-9.0.115/webapps/docs/config/realm.html
+apache-tomcat-9.0.115/webapps/docs/config/resources.html
+apache-tomcat-9.0.115/webapps/docs/config/runtime-attributes.html
+apache-tomcat-9.0.115/webapps/docs/config/server.html
+apache-tomcat-9.0.115/webapps/docs/config/service.html
+apache-tomcat-9.0.115/webapps/docs/config/sessionidgenerator.html
+apache-tomcat-9.0.115/webapps/docs/config/systemprops.html
+apache-tomcat-9.0.115/webapps/docs/config/valve.html
+apache-tomcat-9.0.115/webapps/docs/connectors.html
+apache-tomcat-9.0.115/webapps/docs/default-servlet.html
+apache-tomcat-9.0.115/webapps/docs/deployer-howto.html
+apache-tomcat-9.0.115/webapps/docs/developers.html
+apache-tomcat-9.0.115/webapps/docs/elapi/index.html
+apache-tomcat-9.0.115/webapps/docs/graal.html
+apache-tomcat-9.0.115/webapps/docs/host-manager-howto.html
+apache-tomcat-9.0.115/webapps/docs/html-host-manager-howto.html
+apache-tomcat-9.0.115/webapps/docs/html-manager-howto.html
+apache-tomcat-9.0.115/webapps/docs/images/add.gif
+apache-tomcat-9.0.115/webapps/docs/images/asf-logo.svg
+apache-tomcat-9.0.115/webapps/docs/images/code.gif
+apache-tomcat-9.0.115/webapps/docs/images/cors-flowchart.png
+apache-tomcat-9.0.115/webapps/docs/images/design.gif
+apache-tomcat-9.0.115/webapps/docs/images/docs-stylesheet.css
+apache-tomcat-9.0.115/webapps/docs/images/docs.gif
+apache-tomcat-9.0.115/webapps/docs/images/fix.gif
+apache-tomcat-9.0.115/webapps/docs/images/fonts/OpenSans400.woff
+apache-tomcat-9.0.115/webapps/docs/images/fonts/OpenSans400italic.woff
+apache-tomcat-9.0.115/webapps/docs/images/fonts/OpenSans600.woff
+apache-tomcat-9.0.115/webapps/docs/images/fonts/OpenSans600italic.woff
+apache-tomcat-9.0.115/webapps/docs/images/fonts/OpenSans700.woff
+apache-tomcat-9.0.115/webapps/docs/images/fonts/OpenSans700italic.woff
+apache-tomcat-9.0.115/webapps/docs/images/fonts/fonts.css
+apache-tomcat-9.0.115/webapps/docs/images/tomcat.gif
+apache-tomcat-9.0.115/webapps/docs/images/tomcat.png
+apache-tomcat-9.0.115/webapps/docs/images/update.gif
+apache-tomcat-9.0.115/webapps/docs/images/void.gif
+apache-tomcat-9.0.115/webapps/docs/index.html
+apache-tomcat-9.0.115/webapps/docs/introduction.html
+apache-tomcat-9.0.115/webapps/docs/jasper-howto.html
+apache-tomcat-9.0.115/webapps/docs/jaspicapi/index.html
+apache-tomcat-9.0.115/webapps/docs/jdbc-pool.html
+apache-tomcat-9.0.115/webapps/docs/jndi-datasource-examples-howto.html
+apache-tomcat-9.0.115/webapps/docs/jndi-resources-howto.html
+apache-tomcat-9.0.115/webapps/docs/jspapi/index.html
+apache-tomcat-9.0.115/webapps/docs/logging.html
+apache-tomcat-9.0.115/webapps/docs/manager-howto.html
+apache-tomcat-9.0.115/webapps/docs/maven-jars.html
+apache-tomcat-9.0.115/webapps/docs/mbeans-descriptors-howto.html
+apache-tomcat-9.0.115/webapps/docs/mbeans-descriptors.dtd
+apache-tomcat-9.0.115/webapps/docs/monitoring.html
+apache-tomcat-9.0.115/webapps/docs/proxy-howto.html
+apache-tomcat-9.0.115/webapps/docs/realm-howto.html
+apache-tomcat-9.0.115/webapps/docs/rewrite.html
+apache-tomcat-9.0.115/webapps/docs/security-howto.html
+apache-tomcat-9.0.115/webapps/docs/security-manager-howto.html
+apache-tomcat-9.0.115/webapps/docs/servletapi/index.html
+apache-tomcat-9.0.115/webapps/docs/setup.html
+apache-tomcat-9.0.115/webapps/docs/ssi-howto.html
+apache-tomcat-9.0.115/webapps/docs/ssl-howto.html
+apache-tomcat-9.0.115/webapps/docs/tribes/developers.html
+apache-tomcat-9.0.115/webapps/docs/tribes/faq.html
+apache-tomcat-9.0.115/webapps/docs/tribes/interceptors.html
+apache-tomcat-9.0.115/webapps/docs/tribes/introduction.html
+apache-tomcat-9.0.115/webapps/docs/tribes/membership.html
+apache-tomcat-9.0.115/webapps/docs/tribes/setup.html
+apache-tomcat-9.0.115/webapps/docs/tribes/status.html
+apache-tomcat-9.0.115/webapps/docs/tribes/transport.html
+apache-tomcat-9.0.115/webapps/docs/virtual-hosting-howto.html
+apache-tomcat-9.0.115/webapps/docs/web-socket-howto.html
+apache-tomcat-9.0.115/webapps/docs/websocketapi/index.html
+apache-tomcat-9.0.115/webapps/docs/windows-auth-howto.html
+apache-tomcat-9.0.115/webapps/docs/windows-service-howto.html
+apache-tomcat-9.0.115/webapps/examples/META-INF/context.xml
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/CookieExample.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/CookieExample.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/HelloWorldExample.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/HelloWorldExample.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/LocalStrings.properties
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/LocalStrings_cs.properties
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/LocalStrings_de.properties
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/LocalStrings_es.properties
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/LocalStrings_fr.properties
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/LocalStrings_ja.properties
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/LocalStrings_ko.properties
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/LocalStrings_pt.properties
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/LocalStrings_pt_BR.properties
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/LocalStrings_ru.properties
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/LocalStrings_zh_CN.properties
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/RequestHeaderExample.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/RequestHeaderExample.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/RequestInfoExample.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/RequestInfoExample.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/RequestParamExample.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/RequestParamExample.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/ServletToJsp.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/ServletToJsp.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/SessionExample.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/SessionExample.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/async/Async0$1.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/async/Async0.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/async/Async0.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/async/Async1$1.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/async/Async1.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/async/Async1.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/async/Async2$1.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/async/Async2.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/async/Async2.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/async/Async3.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/async/Async3.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/async/AsyncStockContextListener.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/async/AsyncStockContextListener.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/async/AsyncStockServlet.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/async/AsyncStockServlet.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/async/Stockticker$Stock.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/async/Stockticker$TickListener.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/async/Stockticker.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/async/Stockticker.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/checkbox/CheckTest.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/checkbox/CheckTest.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/colors/ColorGameBean.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/colors/ColorGameBean.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilter.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilter.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilterTestServlet.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilterTestServlet.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/compressionFilters/CompressionResponseStream.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/compressionFilters/CompressionResponseStream.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/compressionFilters/CompressionServletResponseWrapper.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/compressionFilters/CompressionServletResponseWrapper.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/dates/JspCalendar.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/dates/JspCalendar.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/error/Smart.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/error/Smart.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/examples/ExampleTagBase.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/examples/ExampleTagBase.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/examples/FooTag.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/examples/FooTag.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/examples/FooTagExtraInfo.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/examples/FooTagExtraInfo.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/examples/LogTag.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/examples/LogTag.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/examples/ValuesTag.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/examples/ValuesTag.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/filters/ExampleFilter.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/filters/ExampleFilter.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/http2/SimpleImagePush.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/http2/SimpleImagePush.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/BookBean.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/BookBean.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/FooBean.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/FooBean.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/ValuesBean.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/ValuesBean.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/el/Functions.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/el/Functions.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/EchoAttributesTag.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/EchoAttributesTag.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/FindBookSimpleTag.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/FindBookSimpleTag.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/HelloWorldSimpleTag.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/HelloWorldSimpleTag.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/RepeatSimpleTag.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/RepeatSimpleTag.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/ShuffleSimpleTag.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/ShuffleSimpleTag.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/TileSimpleTag.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/TileSimpleTag.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/listeners/ContextListener.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/listeners/ContextListener.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/listeners/SessionListener.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/listeners/SessionListener.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/nonblocking/ByteCounter$1.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/nonblocking/ByteCounter$CounterListener.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/nonblocking/ByteCounter.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/nonblocking/ByteCounter.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/nonblocking/NumberWriter$1.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/nonblocking/NumberWriter$NumberWriterListener.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/nonblocking/NumberWriter.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/nonblocking/NumberWriter.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/num/NumberGuessBean.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/num/NumberGuessBean.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/sessions/DummyCart.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/sessions/DummyCart.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/sessions/Item.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/sessions/Item.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/trailers/ResponseTrailers$1.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/trailers/ResponseTrailers$TrailerFieldSupplier.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/trailers/ResponseTrailers.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/trailers/ResponseTrailers.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/util/CookieFilter.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/util/CookieFilter.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/util/HTMLFilter.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/util/HTMLFilter.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/validators/DebugValidator.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/validators/DebugValidator.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/ExamplesConfig.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/ExamplesConfig.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/chat/ChatAnnotation.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/chat/ChatAnnotation.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/Client$1.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/Client.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/Client.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawMessage$ParseException.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawMessage.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawMessage.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardContextListener.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardContextListener.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$1.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$2.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$3$1.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$3.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$1$1.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$1.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$2.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$MessageType.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$Player.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/Room.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/Room.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/AbstractWebsocketMessage.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/AbstractWebsocketMessage.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/BinaryWebsocketMessage.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/BinaryWebsocketMessage.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/CloseWebsocketMessage.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/CloseWebsocketMessage.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/StringWebsocketMessage.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/StringWebsocketMessage.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/echo/EchoAnnotation.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/echo/EchoAnnotation.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation$1.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation$CompletedFuture.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$1.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$EchoMessageHandlerBinary.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$EchoMessageHandlerText.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/echo/EchoStreamAnnotation.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/echo/EchoStreamAnnotation.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/echo/servers.json
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/snake/Direction.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/snake/Direction.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/snake/Location$1.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/snake/Location.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/snake/Location.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/snake/Snake.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/snake/Snake.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/snake/SnakeAnnotation.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/snake/SnakeAnnotation.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer$1.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.class
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.java
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/jsp/403.jsp
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/jsp/403.jsp.html
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/jsp/debug-taglib.tld
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/jsp/example-taglib.tld
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/jsp/jsp2-example-taglib.tld
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/tags/displayProducts.tag
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/tags/helloWorld.tag
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/tags/panel.tag
+apache-tomcat-9.0.115/webapps/examples/WEB-INF/web.xml
+apache-tomcat-9.0.115/webapps/examples/index.html
+apache-tomcat-9.0.115/webapps/examples/jsp/async/async1.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/async/async1.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/async/async3.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/async/async3.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/async/index.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/async/index.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/checkbox/CheckTest.html
+apache-tomcat-9.0.115/webapps/examples/jsp/checkbox/check.html
+apache-tomcat-9.0.115/webapps/examples/jsp/checkbox/checkresult.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/checkbox/checkresult.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/checkbox/cresult.html
+apache-tomcat-9.0.115/webapps/examples/jsp/colors/ColorGameBean.html
+apache-tomcat-9.0.115/webapps/examples/jsp/colors/clr.html
+apache-tomcat-9.0.115/webapps/examples/jsp/colors/colors.html
+apache-tomcat-9.0.115/webapps/examples/jsp/colors/colrs.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/colors/colrs.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/dates/date.html
+apache-tomcat-9.0.115/webapps/examples/jsp/dates/date.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/dates/date.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/error/er.html
+apache-tomcat-9.0.115/webapps/examples/jsp/error/err.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/error/err.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/error/error.html
+apache-tomcat-9.0.115/webapps/examples/jsp/error/errorpge.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/error/errorpge.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/forward/forward.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/forward/forward.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/forward/fwd.html
+apache-tomcat-9.0.115/webapps/examples/jsp/forward/one.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/forward/one.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/forward/two.html
+apache-tomcat-9.0.115/webapps/examples/jsp/images/code.gif
+apache-tomcat-9.0.115/webapps/examples/jsp/images/execute.gif
+apache-tomcat-9.0.115/webapps/examples/jsp/images/return.gif
+apache-tomcat-9.0.115/webapps/examples/jsp/include/foo.html
+apache-tomcat-9.0.115/webapps/examples/jsp/include/foo.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/include/foo.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/include/inc.html
+apache-tomcat-9.0.115/webapps/examples/jsp/include/include.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/include/include.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/index.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/el/Functions.java.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/el/ValuesBean.java.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/el/ValuesTag.java.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/el/basic-arithmetic.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/el/basic-arithmetic.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/el/basic-arithmetic.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/el/basic-comparisons.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/el/basic-comparisons.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/el/basic-comparisons.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/el/composite.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/el/composite.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/el/composite.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/el/functions.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/el/functions.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/el/functions.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/el/implicit-objects.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/el/implicit-objects.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/el/implicit-objects.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/jspattribute/FooBean.java.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/jspattribute/HelloWorldSimpleTag.java.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/jspattribute/ShuffleSimpleTag.java.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/jspattribute/TileSimpleTag.java.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/jspattribute/jspattribute.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/jspattribute/jspattribute.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/jspattribute/jspattribute.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/jspattribute/shuffle.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/jspattribute/shuffle.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/jspattribute/shuffle.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/jspx/basic.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/jspx/basic.jspx
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/jspx/basic.jspx.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/jspx/svgexample.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/jspx/textRotate.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/jspx/textRotate.jpg
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/jspx/textRotate.jspx
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/jspx/textRotate.jspx.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/misc/EchoAttributesTag.java.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/misc/coda.jspf
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/misc/coda.jspf.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/misc/config.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/misc/config.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/misc/config.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/misc/dynamicattrs.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/misc/dynamicattrs.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/misc/dynamicattrs.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/misc/prelude.jspf
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/misc/prelude.jspf.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/simpletag/BookBean.java.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/simpletag/FindBookSimpleTag.java.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/simpletag/Functions.java.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/simpletag/HelloWorldSimpleTag.java.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/simpletag/RepeatSimpleTag.java.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/simpletag/book.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/simpletag/book.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/simpletag/book.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/simpletag/hello.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/simpletag/hello.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/simpletag/hello.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/simpletag/repeat.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/simpletag/repeat.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/simpletag/repeat.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/tagfiles/displayProducts.tag.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/tagfiles/hello.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/tagfiles/hello.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/tagfiles/hello.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/tagfiles/helloWorld.tag.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/tagfiles/panel.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/tagfiles/panel.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/tagfiles/panel.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/tagfiles/panel.tag.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/tagfiles/products.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/tagfiles/products.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/jsp2/tagfiles/products.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsptoserv/ServletToJsp.java.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsptoserv/hello.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/jsptoserv/hello.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsptoserv/jsptoservlet.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/jsptoserv/jsptoservlet.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/jsptoserv/jts.html
+apache-tomcat-9.0.115/webapps/examples/jsp/num/numguess.html
+apache-tomcat-9.0.115/webapps/examples/jsp/num/numguess.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/num/numguess.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/security/protected/error.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/security/protected/error.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/security/protected/index.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/security/protected/index.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/security/protected/login.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/security/protected/login.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/sessions/DummyCart.html
+apache-tomcat-9.0.115/webapps/examples/jsp/sessions/carts.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/sessions/carts.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/sessions/crt.html
+apache-tomcat-9.0.115/webapps/examples/jsp/sessions/shopping.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/sessions/shopping.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/simpletag/foo.html
+apache-tomcat-9.0.115/webapps/examples/jsp/simpletag/foo.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/simpletag/foo.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/snp/snoop.html
+apache-tomcat-9.0.115/webapps/examples/jsp/snp/snoop.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/snp/snoop.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/tagplugin/choose.html
+apache-tomcat-9.0.115/webapps/examples/jsp/tagplugin/choose.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/tagplugin/choose.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/tagplugin/foreach.html
+apache-tomcat-9.0.115/webapps/examples/jsp/tagplugin/foreach.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/tagplugin/foreach.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/tagplugin/howto.html
+apache-tomcat-9.0.115/webapps/examples/jsp/tagplugin/if.html
+apache-tomcat-9.0.115/webapps/examples/jsp/tagplugin/if.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/tagplugin/if.jsp.html
+apache-tomcat-9.0.115/webapps/examples/jsp/tagplugin/notes.html
+apache-tomcat-9.0.115/webapps/examples/jsp/xml/xml.html
+apache-tomcat-9.0.115/webapps/examples/jsp/xml/xml.jsp
+apache-tomcat-9.0.115/webapps/examples/jsp/xml/xml.jsp.html
+apache-tomcat-9.0.115/webapps/examples/servlets/cookies.html
+apache-tomcat-9.0.115/webapps/examples/servlets/helloworld.html
+apache-tomcat-9.0.115/webapps/examples/servlets/images/code.gif
+apache-tomcat-9.0.115/webapps/examples/servlets/images/execute.gif
+apache-tomcat-9.0.115/webapps/examples/servlets/images/return.gif
+apache-tomcat-9.0.115/webapps/examples/servlets/index.html
+apache-tomcat-9.0.115/webapps/examples/servlets/nonblocking/bytecounter.html
+apache-tomcat-9.0.115/webapps/examples/servlets/reqheaders.html
+apache-tomcat-9.0.115/webapps/examples/servlets/reqinfo.html
+apache-tomcat-9.0.115/webapps/examples/servlets/reqparams.html
+apache-tomcat-9.0.115/webapps/examples/servlets/sessions.html
+apache-tomcat-9.0.115/webapps/examples/websocket/chat.xhtml
+apache-tomcat-9.0.115/webapps/examples/websocket/drawboard.xhtml
+apache-tomcat-9.0.115/webapps/examples/websocket/echo.xhtml
+apache-tomcat-9.0.115/webapps/examples/websocket/index.xhtml
+apache-tomcat-9.0.115/webapps/examples/websocket/snake.xhtml
+apache-tomcat-9.0.115/webapps/host-manager/META-INF/context.xml
+apache-tomcat-9.0.115/webapps/host-manager/WEB-INF/jsp/401.jsp
+apache-tomcat-9.0.115/webapps/host-manager/WEB-INF/jsp/403.jsp
+apache-tomcat-9.0.115/webapps/host-manager/WEB-INF/jsp/404.jsp
+apache-tomcat-9.0.115/webapps/host-manager/WEB-INF/manager.xml
+apache-tomcat-9.0.115/webapps/host-manager/WEB-INF/web.xml
+apache-tomcat-9.0.115/webapps/host-manager/css/manager.css
+apache-tomcat-9.0.115/webapps/host-manager/images/asf-logo.svg
+apache-tomcat-9.0.115/webapps/host-manager/images/favicon.ico
+apache-tomcat-9.0.115/webapps/host-manager/images/tomcat.svg
+apache-tomcat-9.0.115/webapps/host-manager/index.jsp
+apache-tomcat-9.0.115/webapps/manager/META-INF/context.xml
+apache-tomcat-9.0.115/webapps/manager/WEB-INF/jsp/401.jsp
+apache-tomcat-9.0.115/webapps/manager/WEB-INF/jsp/403.jsp
+apache-tomcat-9.0.115/webapps/manager/WEB-INF/jsp/404.jsp
+apache-tomcat-9.0.115/webapps/manager/WEB-INF/jsp/connectorCerts.jsp
+apache-tomcat-9.0.115/webapps/manager/WEB-INF/jsp/connectorCiphers.jsp
+apache-tomcat-9.0.115/webapps/manager/WEB-INF/jsp/connectorTrustedCerts.jsp
+apache-tomcat-9.0.115/webapps/manager/WEB-INF/jsp/sessionDetail.jsp
+apache-tomcat-9.0.115/webapps/manager/WEB-INF/jsp/sessionsList.jsp
+apache-tomcat-9.0.115/webapps/manager/WEB-INF/web.xml
+apache-tomcat-9.0.115/webapps/manager/css/manager.css
+apache-tomcat-9.0.115/webapps/manager/images/asf-logo.svg
+apache-tomcat-9.0.115/webapps/manager/images/favicon.ico
+apache-tomcat-9.0.115/webapps/manager/images/tomcat.svg
+apache-tomcat-9.0.115/webapps/manager/index.jsp
+apache-tomcat-9.0.115/webapps/manager/status.xsd
+apache-tomcat-9.0.115/webapps/manager/xform.xsl
+apache-tomcat-9.0.115/bin/catalina.sh
+apache-tomcat-9.0.115/bin/ciphers.sh
+apache-tomcat-9.0.115/bin/configtest.sh
+apache-tomcat-9.0.115/bin/daemon.sh
+apache-tomcat-9.0.115/bin/digest.sh
+apache-tomcat-9.0.115/bin/makebase.sh
+apache-tomcat-9.0.115/bin/setclasspath.sh
+apache-tomcat-9.0.115/bin/shutdown.sh
+apache-tomcat-9.0.115/bin/startup.sh
+apache-tomcat-9.0.115/bin/tool-wrapper.sh
+apache-tomcat-9.0.115/bin/version.sh
+[root@ip-172-31-23-165 ~]# vim apache-tomcat-9.0.115/conf/tomcat-users.xml
+
+[1]+  Stopped                 vim apache-tomcat-9.0.115/conf/tomcat-users.xml
+[root@ip-172-31-23-165 ~]# vim apache-tomcat-9.0.115/conf/tomcat-users.xml
+[root@ip-172-31-23-165 ~]# vim apache-tomcat-9.0.87/webapps/manager/META-INF/context.xml
+[root@ip-172-31-23-165 ~]#
+[root@ip-172-31-23-165 ~]# jobs
+[1]+  Stopped                 vim apache-tomcat-9.0.115/conf/tomcat-users.xml
+[root@ip-172-31-23-165 ~]# fg %1
+vim apache-tomcat-9.0.115/conf/tomcat-users.xml
+[root@ip-172-31-23-165 ~]# vim apache-tomcat-9.0.115/webapps/manager/META-INF/context.xml
+[root@ip-172-31-23-165 ~]# sh apache-tomcat-9.0.115/bin/startup.sh
+Using CATALINA_BASE:   /root/apache-tomcat-9.0.115
+Using CATALINA_HOME:   /root/apache-tomcat-9.0.115
+Using CATALINA_TMPDIR: /root/apache-tomcat-9.0.115/temp
+Using JRE_HOME:        /usr
+Using CLASSPATH:       /root/apache-tomcat-9.0.115/bin/bootstrap.jar:/root/apache-tomcat-9.0.115/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Tomcat started.
+[root@ip-172-31-23-165 ~]# sudo systemctl stop jenkins
+[root@ip-172-31-23-165 ~]# apache-tomcat-9.0.115/bin/startup.sh
+Using CATALINA_BASE:   /root/apache-tomcat-9.0.115
+Using CATALINA_HOME:   /root/apache-tomcat-9.0.115
+Using CATALINA_TMPDIR: /root/apache-tomcat-9.0.115/temp
+Using JRE_HOME:        /usr
+Using CLASSPATH:       /root/apache-tomcat-9.0.115/bin/bootstrap.jar:/root/apache-tomcat-9.0.115/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Tomcat started.
+[root@ip-172-31-23-165 ~]# sudo vim apache-tomcat-9.0.115/conf/server.xml
+[root@ip-172-31-23-165 ~]# apache-tomcat-9.0.115/bin/shutdown.sh
+apache-tomcat-9.0.115/bin/startup.sh
+Using CATALINA_BASE:   /root/apache-tomcat-9.0.115
+Using CATALINA_HOME:   /root/apache-tomcat-9.0.115
+Using CATALINA_TMPDIR: /root/apache-tomcat-9.0.115/temp
+Using JRE_HOME:        /usr
+Using CLASSPATH:       /root/apache-tomcat-9.0.115/bin/bootstrap.jar:/root/apache-tomcat-9.0.115/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+Using CATALINA_BASE:   /root/apache-tomcat-9.0.115
+Using CATALINA_HOME:   /root/apache-tomcat-9.0.115
+Using CATALINA_TMPDIR: /root/apache-tomcat-9.0.115/temp
+Using JRE_HOME:        /usr
+Using CLASSPATH:       /root/apache-tomcat-9.0.115/bin/bootstrap.jar:/root/apache-tomcat-9.0.115/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Tomcat started.
+[root@ip-172-31-23-165 ~]# sudo vim apache-tomcat-9.0.115/conf/tomcat-users.xml
+[root@ip-172-31-23-165 ~]# apache-tomcat-9.0.115/bin/shutdown.sh
+apache-tomcat-9.0.115/bin/startup.sh
+Using CATALINA_BASE:   /root/apache-tomcat-9.0.115
+Using CATALINA_HOME:   /root/apache-tomcat-9.0.115
+Using CATALINA_TMPDIR: /root/apache-tomcat-9.0.115/temp
+Using JRE_HOME:        /usr
+Using CLASSPATH:       /root/apache-tomcat-9.0.115/bin/bootstrap.jar:/root/apache-tomcat-9.0.115/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+Using CATALINA_BASE:   /root/apache-tomcat-9.0.115
+Using CATALINA_HOME:   /root/apache-tomcat-9.0.115
+Using CATALINA_TMPDIR: /root/apache-tomcat-9.0.115/temp
+Using JRE_HOME:        /usr
+Using CLASSPATH:       /root/apache-tomcat-9.0.115/bin/bootstrap.jar:/root/apache-tomcat-9.0.115/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Tomcat started.
+[root@ip-172-31-23-165 ~]# vim apache-tomcat-9.0.115/conf/tomcat-users.xml
+[root@ip-172-31-23-165 ~]# tail -100f apache-tomcat-9.0.115/logs/catalin.out
+tail: cannot open 'apache-tomcat-9.0.115/logs/catalin.out' for reading: No such file or directory
+tail: no files remaining
+[root@ip-172-31-23-165 ~]# tail -100f apache-tomcat-9.0.115/logs/catalina.out
+16-Feb-2026 20:47:23.270 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 21 2026 08:17:26 UTC
+16-Feb-2026 20:47:23.271 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.115.0
+16-Feb-2026 20:47:23.271 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+16-Feb-2026 20:47:23.271 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.1.159-182.297.amzn2023.x86_64
+16-Feb-2026 20:47:23.271 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+16-Feb-2026 20:47:23.271 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-amazon-corretto.x86_64
+16-Feb-2026 20:47:23.271 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.29+7-LTS
+16-Feb-2026 20:47:23.271 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Amazon.com Inc.
+16-Feb-2026 20:47:23.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /root/apache-tomcat-9.0.115
+16-Feb-2026 20:47:23.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /root/apache-tomcat-9.0.115
+16-Feb-2026 20:47:23.303 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+16-Feb-2026 20:47:23.303 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.invoke=ALL-UNNAMED
+16-Feb-2026 20:47:23.303 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+16-Feb-2026 20:47:23.303 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+16-Feb-2026 20:47:23.303 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+16-Feb-2026 20:47:23.303 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+16-Feb-2026 20:47:23.304 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+16-Feb-2026 20:47:23.304 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/root/apache-tomcat-9.0.115/conf/logging.properties
+16-Feb-2026 20:47:23.304 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+16-Feb-2026 20:47:23.304 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+16-Feb-2026 20:47:23.304 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+16-Feb-2026 20:47:23.304 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dsun.io.useCanonCaches=false
+16-Feb-2026 20:47:23.304 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+16-Feb-2026 20:47:23.305 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+16-Feb-2026 20:47:23.305 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/root/apache-tomcat-9.0.115
+16-Feb-2026 20:47:23.305 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/root/apache-tomcat-9.0.115
+16-Feb-2026 20:47:23.305 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/root/apache-tomcat-9.0.115/temp
+16-Feb-2026 20:47:23.314 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+16-Feb-2026 20:47:23.813 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+16-Feb-2026 20:47:23.850 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [917] milliseconds
+16-Feb-2026 20:47:23.973 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+16-Feb-2026 20:47:23.973 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.115]
+16-Feb-2026 20:47:23.985 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/root/apache-tomcat-9.0.115/webapps/ROOT]
+16-Feb-2026 20:47:24.403 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/root/apache-tomcat-9.0.115/webapps/ROOT] has finished in [417] ms
+16-Feb-2026 20:47:24.406 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/root/apache-tomcat-9.0.115/webapps/docs]
+16-Feb-2026 20:47:24.436 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/root/apache-tomcat-9.0.115/webapps/docs] has finished in [30] ms
+16-Feb-2026 20:47:24.437 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/root/apache-tomcat-9.0.115/webapps/examples]
+16-Feb-2026 20:47:24.725 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/root/apache-tomcat-9.0.115/webapps/examples] has finished in [288] ms
+16-Feb-2026 20:47:24.725 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/root/apache-tomcat-9.0.115/webapps/host-manager]
+16-Feb-2026 20:47:24.758 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/root/apache-tomcat-9.0.115/webapps/host-manager] has finished in [32] ms
+16-Feb-2026 20:47:24.758 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/root/apache-tomcat-9.0.115/webapps/manager]
+16-Feb-2026 20:47:24.783 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/root/apache-tomcat-9.0.115/webapps/manager] has finished in [25] ms
+16-Feb-2026 20:47:24.787 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+16-Feb-2026 20:47:24.806 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [955] milliseconds
+16-Feb-2026 21:07:14.952 INFO [Catalina-utility-2] org.apache.catalina.users.MemoryUserDatabase.backgroundProcess Reloading memory user database [UserDatabase] from updated source [file:/root/apache-tomcat-9.0.115/conf/tomcat-users.xml]
+16-Feb-2026 21:07:14.959 SEVERE [Catalina-utility-2] org.apache.tomcat.util.digester.Digester.fatalError Parse fatal error at line [60] column [1]
+        org.xml.sax.SAXParseException; lineNumber: 60; columnNumber: 1; XML document structures must start and end within the same entity.
+                at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:204)
+                at java.xml/com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:178)
+                at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:400)
+                at java.xml/com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:327)
+                at java.xml/com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1465)
+                at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.endEntity(XMLDocumentFragmentScannerImpl.java:933)
+                at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.endEntity(XMLDocumentScannerImpl.java:562)
+                at java.xml/com.sun.org.apache.xerces.internal.impl.XMLEntityManager.endEntity(XMLEntityManager.java:1502)
+                at java.xml/com.sun.org.apache.xerces.internal.impl.XMLEntityScanner.load(XMLEntityScanner.java:1720)
+                at java.xml/com.sun.org.apache.xerces.internal.impl.XMLEntityScanner.skipSpaces(XMLEntityScanner.java:1459)
+                at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1689)
+                at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2883)
+                at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+                at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:534)
+                at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:888)
+                at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:824)
+                at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+                at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1216)
+                at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:635)
+                at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1537)
+                at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:374)
+                at org.apache.catalina.users.MemoryUserDatabase.backgroundProcess(MemoryUserDatabase.java:638)
+                at org.apache.catalina.realm.UserDatabaseRealm.backgroundProcess(UserDatabaseRealm.java:140)
+                at org.apache.catalina.realm.CombinedRealm.backgroundProcess(CombinedRealm.java:247)
+                at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:957)
+                at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1170)
+                at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1152)
+                at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+                at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+                at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+                at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+                at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+                at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+                at java.base/java.lang.Thread.run(Thread.java:829)
+16-Feb-2026 21:07:14.963 SEVERE [Catalina-utility-2] org.apache.catalina.users.MemoryUserDatabase.backgroundProcess Error reloading memory user database [UserDatabase] from updated source [file:/root/apache-tomcat-9.0.115/conf/tomcat-users.xml]
+        org.xml.sax.SAXParseException; lineNumber: 60; columnNumber: 1; XML document structures must start and end within the same entity.
+                at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1243)
+                at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:635)
+                at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1537)
+                at org.apache.catalina.users.MemoryUserDatabase.open(MemoryUserDatabase.java:374)
+                at org.apache.catalina.users.MemoryUserDatabase.backgroundProcess(MemoryUserDatabase.java:638)
+                at org.apache.catalina.realm.UserDatabaseRealm.backgroundProcess(UserDatabaseRealm.java:140)
+                at org.apache.catalina.realm.CombinedRealm.backgroundProcess(CombinedRealm.java:247)
+                at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:957)
+                at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1170)
+                at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1152)
+                at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+                at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+                at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+                at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+                at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+                at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+                at java.base/java.lang.Thread.run(Thread.java:829)
+[root@ip-172-31-23-165 ~]# ll
+total 12788
+drwxr-xr-x. 9 root root    16384 Feb 16 19:48 apache-tomcat-9.0.115
+-rw-r--r--. 1 root root 13072656 Jan 21 08:47 apache-tomcat-9.0.115.tar.gz
+-rw-r--r--. 1 root root      838 Feb 14 05:28 nexus.sh
+[root@ip-172-31-23-165 ~]# ll apache-tomcat-9.0.115/
+total 188
+-rw-r-----. 1 root root 24564 Jan 21 08:17 BUILDING.txt
+-rw-r-----. 1 root root  6096 Jan 21 08:17 CONTRIBUTING.md
+-rw-r-----. 1 root root 57092 Jan 21 08:17 LICENSE
+-rw-r-----. 1 root root  2333 Jan 21 08:17 NOTICE
+-rw-r-----. 1 root root  3195 Jan 21 08:17 README.md
+-rw-r-----. 1 root root  6902 Jan 21 08:17 RELEASE-NOTES
+-rw-r-----. 1 root root 16543 Jan 21 08:17 RUNNING.txt
+drwxr-x---. 2 root root 16384 Feb 16 19:48 bin
+drwx------. 3 root root 16384 Feb 16 21:07 conf
+drwxr-x---. 2 root root 16384 Feb 16 19:48 lib
+drwxr-x---. 2 root root 16384 Feb 16 20:23 logs
+drwxr-x---. 2 root root    30 Feb 16 19:48 temp
+drwxr-x---. 7 root root    81 Jan 21 08:17 webapps
+drwxr-x---. 3 root root    22 Feb 16 20:23 work
+[root@ip-172-31-23-165 ~]# ll apache-tomcat-9.0.115/lib
+total 10524
+-rw-r-----. 1 root root   13364 Jan 21 08:17 annotations-api.jar
+-rw-r-----. 1 root root   54587 Jan 21 08:17 catalina-ant.jar
+-rw-r-----. 1 root root  126936 Jan 21 08:17 catalina-ha.jar
+-rw-r-----. 1 root root   63979 Jan 21 08:17 catalina-ssi.jar
+-rw-r-----. 1 root root   80428 Jan 21 08:17 catalina-storeconfig.jar
+-rw-r-----. 1 root root  341886 Jan 21 08:17 catalina-tribes.jar
+-rw-r-----. 1 root root 1851076 Jan 21 08:17 catalina.jar
+-rw-r-----. 1 root root 3133846 Jan 21 08:17 ecj-4.20.jar
+-rw-r-----. 1 root root   88904 Jan 21 08:17 el-api.jar
+-rw-r-----. 1 root root  178442 Jan 21 08:17 jasper-el.jar
+-rw-r-----. 1 root root  564019 Jan 21 08:17 jasper.jar
+-rw-r-----. 1 root root   27333 Jan 21 08:17 jaspic-api.jar
+-rw-r-----. 1 root root   74431 Jan 21 08:17 jsp-api.jar
+-rw-r-----. 1 root root  285900 Jan 21 08:17 servlet-api.jar
+-rw-r-----. 1 root root   11677 Jan 21 08:17 tomcat-api.jar
+-rw-r-----. 1 root root  325877 Jan 21 08:17 tomcat-coyote-ffm.jar
+-rw-r-----. 1 root root 1016195 Jan 21 08:17 tomcat-coyote.jar
+-rw-r-----. 1 root root  352036 Jan 21 08:17 tomcat-dbcp.jar
+-rw-r-----. 1 root root   73465 Jan 21 08:17 tomcat-i18n-cs.jar
+-rw-r-----. 1 root root   82074 Jan 21 08:17 tomcat-i18n-de.jar
+-rw-r-----. 1 root root  108322 Jan 21 08:17 tomcat-i18n-es.jar
+-rw-r-----. 1 root root  186380 Jan 21 08:17 tomcat-i18n-fr.jar
+-rw-r-----. 1 root root  211571 Jan 21 08:17 tomcat-i18n-ja.jar
+-rw-r-----. 1 root root  196516 Jan 21 08:17 tomcat-i18n-ko.jar
+-rw-r-----. 1 root root   56465 Jan 21 08:17 tomcat-i18n-pt-BR.jar
+-rw-r-----. 1 root root   73062 Jan 21 08:17 tomcat-i18n-ru.jar
+-rw-r-----. 1 root root  183331 Jan 21 08:17 tomcat-i18n-zh-CN.jar
+-rw-r-----. 1 root root  154938 Jan 21 08:17 tomcat-jdbc.jar
+-rw-r-----. 1 root root   39585 Jan 21 08:17 tomcat-jni.jar
+-rw-r-----. 1 root root  226123 Jan 21 08:17 tomcat-util-scan.jar
+-rw-r-----. 1 root root  248175 Jan 21 08:17 tomcat-util.jar
+-rw-r-----. 1 root root  251295 Jan 21 08:17 tomcat-websocket.jar
+-rw-r-----. 1 root root   40308 Jan 21 08:17 websocket-api.jar
+[root@ip-172-31-23-165 ~]#
+[root@ip-172-31-23-165 ~]#
