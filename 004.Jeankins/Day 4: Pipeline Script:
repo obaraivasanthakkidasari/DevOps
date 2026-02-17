@@ -1,0 +1,45 @@
+Pipeline Script:
+Pipeline Script:
+
+pipeline {
+    agent {
+        label 'one'
+    }
+    
+    stages {
+        stage("checkout") {
+            steps {
+                git "https://github.com/chriskarteek/jenkins-java-project.git"
+            }
+        }
+        stage("build") {
+            steps {
+                sh 'mvn compile'
+            }
+        }
+        stage("test") {
+            steps {
+                sh 'mvn test'
+            }
+        }
+        stage("artifact") {
+            steps {
+                sh 'mvn package'
+            }
+        }
+        stage('deployment') {
+            steps {
+                deploy adapters: [
+                    tomcat9(
+                        credentialsId: '47f1990b-7b77-435c-891c-bf36285b8338',
+                        path: '',
+                        url: 'http://3.142.209.31:8081/'
+                    )
+                ],
+                contextPath: 'netflix',
+                war: 'target/NETFLIX-1.2.2.war'
+            }
+        }
+    }
+}
+
