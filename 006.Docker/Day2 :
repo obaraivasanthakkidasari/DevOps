@@ -1,1 +1,60 @@
+HISTORY:
+
+    1  yum install docker -y
+    2  docker version
+    3  systemctl start docker
+    4  systemctl status docker
+    5  docker pull ubuntu
+    6  docker run -it --name cont1 ubuntu
+    7  docker attach cont1
+    8  docker images
+    9  docker ps -a
+   10  docker commit cont1 raham:v1
+   11  docker images
+   12  docker run -it --name cont2 raham:v1
+   13  docker images
+   14  docker ps -a
+   15  docker kill cont1 cont2
+   16  docker rm cont1 cont2
+   17  docker ps -a
+   18  docker rmi -f raham:v1
+   19  vim Dockerfile
+   20  docker images
+   21  docker ps -a
+   22  docker build -t raham:v1 .
+   23  docker images
+   24  docker run -it --name cont1 raham:v1
+   25  vim Dockerfile
+   26  docker build -t raham:v2 .
+   27  docker run -it --name cont2 raham:v2
+   28  ll
+   29  touch index.html
+   30  vim Dockerfile
+   31  docker build -t raham:v3 .
+   32  docker run -it --name cont3 raham:v3
+   33  vim Dockerfile
+   34  docker build -t raham:v4 .
+   35  docker run -it --name cont4 raham:v4
+   36  docker ps -a
+   37  vim Dockerfile
+   38  docker build -t raham:v5 .
+   39  docker run -it --name cont5 raham:v5
+   40  docker inspect cont5
+   41  vim Dockerfile
+   42  vim index.html
+   43  vim Dockerfile
+   44  docker build -t raham:v6 .
+   45  docker run -it --name cont6 -p 81:80 raham:v6
+   46  docker ps -a
+   47  docker run -itd --name cont7 -p 82:80 raham:v6
+   48  docker ps -a
+   49  docker ps -aq
+   50  docker stop $(docker ps -aq)
+   51  docker rm $(docker ps -aq)
+   52  docker ps -a
+   53  docker images
+   54  docker images -aq
+   55  docker rmi -f $(docker images -aq)
+   56  docker images
+   57  history
 
