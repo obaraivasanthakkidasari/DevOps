@@ -1,1 +1,107 @@
+HISTORY:
+
+    1  yum install docker -y
+    2  yum install docker -y
+    3  systemctl start docker
+    4  systemctl status docker
+    5  vim Dockerfile
+    6  vim index.html
+    7  docker build -t movies:v1 .
+    8  docker run -itd --name cont1 -p 81:80 movies:v1
+    9  vim index.html
+   10  docker build -t train:v1 .
+   11  docker run -itd --name cont2 -p 82:80 train:v1
+   12  vim index.html
+   13  docker build -t recharge:v1 .
+   14  docker run -itd --name cont3 -p 83:80 recharge:v1
+   15  vim index.html
+   16  docker build -t dth:v1 .
+   17  docker run  -itd --name cont4 -p 84:80 dth:v1
+   18  docker-compose
+   19  docker ps -a
+   20  docker kill $(docker ps -aq)
+   21  docker rm $(docker ps -aq)
+   22  docker ps -a
+   23  sudo curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              /usr/local/bin/docker-compose
+   24  ls /usr/local/bin/
+   25  sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+   26  sudo chmod +x /usr/local/bin/docker-compose
+   27  docker-compose version
+   28  docker-compose
+   29  vim docker-compose.yml
+   30  docker-compose up -d
+   31  docker-compose ps -a
+   32  docker ps -a
+   33  docker-compose stop
+   34  docker ps -a
+   35  docker-compose start
+   36  docker ps -a
+   37  docker-compose pause
+   38  docker ps -a
+   39  docker-compose unpause
+   40  docker-compose kill
+   41  docker ps -a
+   42  docker-compose rm
+   43  docker ps -a
+   44  docker-compose up -d
+   45  docker ps -a
+   46  docker images
+   47  docker-compose images
+   48  docker ps -a
+   49  docker-compose ps -a
+   50  docker run  -itd --name cont4 -p 84:80 dth:v1
+   51  docker run  -itd --name cont4 -p 85:80 dth:v1
+   52  docker ps -a
+   53  docker-compose ps -a
+   54  docker-compose logs
+   55  docker-compose top
+   56  docker-compose restart
+   57  docker-compose scale train=10
+   58  docker-compose ps -a
+   59  ll
+   60  mv docker-compose.yml raham.yml
+   61  docker-compose kill
+   62  docker-compose -f raham.yml kill
+   63  docker-compose -f raham.yml rm
+   64  docker-compose -f raham.yml up -d
+   65  docker-compose -f raham.yml down
+   66  docker images
+   67  docker tag movies:v1 vijaykumar444p/movies
+   68  docker images
+   69  docker push vijaykumar444p/movies
+   70  docker login
+   71  docker push vijaykumar444p/movies
+   72  docker tag train:v1 vijaykumar444p/train
+   73  docker push vijaykumar444p/train
+   74  docker tag dth:v1 vijaykumar444p/dth
+   75  docker push vijaykumar444p/dth
+   76  docker tag recharge:v1 vijaykumar444p/recharge
+   77  docker push  vijaykumar444p/recharge
+   78  docker images -q
+   79  docker rmi -f $(docker images -q)
+   80  docker images
+   81  docker pull vijaykumar444p/movies:latest
+   82  docker images
+   83  docker run -it  -p 8888:8080 tomcat:9.0
+   84  docker kil $(docker ps -q)
+   85  docker kill $(docker ps -q)
+   86  docker kill $(docker ps -aq)
+   87  docker rm $(docker ps -aq)
+   88  docker run -it  -p 8080:8080 tomcat:latest
+   89  docker kill $(docker ps -aq)
+   90  docker rm $(docker ps -aq)
+   91  docker run -it --name cont1 -p 8080:8080  tomcat:jre21-temurin-jammy
+   92  docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=raham123 -d mysql:tag
+   93  docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=raham123 -d mysql:latest
+   94  docker ps
+   95  docker exec -it mysql-db /bin/bash
+   96  docker images
+   97  docker save vijaykumar444p/movies:latest -o abc.tar
+   98  ls
+   99  ll
+  100  du -sh abc.tar
+  101  gzip abc.tar abc.tar.gz
+  102  du -sh abc.tar.gz
+  103  history
+
 
